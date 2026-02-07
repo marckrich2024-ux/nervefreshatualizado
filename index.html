@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-WLRLBSV9');</script>
+  <!-- End Google Tag Manager -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Health Journal Daily - Review</title>
+  <meta name="description" content="Complete review on Nerve Fresh and neuropathy relief." />
+
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Inter, Roboto, and Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap"
+    rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Roboto', 'Inter', 'sans-serif'], // Body font
+            heading: ['Montserrat', 'sans-serif'], // Heading font
+          },
+          colors: {
+            brand: {
+              green: '#1E984E',
+              darkGreen: '#167a3d',
+              lightGreen: '#e6f4ea'
+            },
+            medical: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              900: '#0c4a6e',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  </style>
+
+  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/883/883360.png">
+  <link rel="stylesheet" href="/index.css">
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLRLBSV9" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+  <script>
+      (function () {
+        const COOKIE_NAME = "ads_click_ids";
+        const COOKIE_DAYS = 90;
+        const VENDOR_DOMAIN = "secure.nervefresh.com";
+
+        // MAPA DE PARÂMETROS:
+        // A chave é como vai pro ClickBank (clid)
+        // O valor é o que pegamos da URL/Cookie (gclid)
+        const OUT_TO_IN_MAP = {
+          "clid": "gclid",     // ClickBank exige 'clid', nós pegamos 'gclid'
+          "wbraid": "wbraid",
+          "gbraid": "gbraid",
+          "gclid": "gclid"     // Mandamos o original também por garantia
+        };
+
+        // --- Helpers de Cookie/URL ---
+        function qs(key) {
+          return new URLSearchParams(window.location.search).get(key);
+        }
+        function setCookie(name, value, days) {
+          const maxAge = days * 24 * 60 * 60;
+          document.cookie = `${name}=${encodeURIComponent(value)}; Max-Age=${maxAge}; Path=/; SameSite=Lax`;
+        }
+        function getCookie(name) {
+          const match = document.cookie.match(new RegExp("(^| )" + name + "=([^;]+)"));
+          return match ? decodeURIComponent(match[2]) : null;
+        }
+        function safeParse(str) {
+          try { return JSON.parse(str); } catch { return {}; }
+        }
+
+        // --- 1. Captura e Persistência (Executa no Load) ---
+        const captured = {};
+        const uniqueKeys = new Set(Object.values(OUT_TO_IN_MAP));
+        uniqueKeys.forEach(k => {
+          const v = qs(k);
+          if (v) captured[k] = v;
+        });
+
+        const stored = safeParse(getCookie(COOKIE_NAME) || "{}");
+        const merged = Object.assign({}, stored, captured);
+        setCookie(COOKIE_NAME, JSON.stringify(merged), COOKIE_DAYS);
+
+        // --- 2. Função que Constrói a URL Final ---
+        function buildFinalUrl(originalUrl) {
+          try {
+            const url = new URL(originalUrl, window.location.origin);
+
+            // Se não for link do produto e nem for os botões de CTA, não mexe?
+            // Mas aqui a gente garante validando o domínio ou o contexto antes de chamar.
+
+            Object.keys(OUT_TO_IN_MAP).forEach(outKey => {
+              const inKey = OUT_TO_IN_MAP[outKey];
+              const value = qs(inKey) || merged[inKey]; // URL atual ganha do cookie
+
+              // Só adiciona se tiver valor e ainda não existir na URL de destino (ou sobrescreve?)
+              // Melhor sobrescrever/garantir pra evitar envio vazio
+              if (value) {
+                url.searchParams.set(outKey, value);
+              }
+            });
+            return url.toString();
+          } catch (e) {
+            return originalUrl;
+          }
+        }
+
+        // --- 3. Event Listener Global (Interceptor "Pro") ---
+        // Usa capture=true para pegar o evento o mais cedo possível
+        document.addEventListener("click", function (e) {
+          // Procura o elemento clicado que seja link ou nossos botões
+          const target = e.target.closest("a[href], [id^='btn-']");
+
+          if (!target) return;
+
+          let href = target.getAttribute("href") || target.getAttribute("data-href");
+
+          // Se não tem link, não temos o que fazer (a menos que seja navegação 100% JS sem URL)
+          if (!href) return;
+
+          // Verifica se é um link que devemos interceptar
+          // 1. Aponta pro domínio do vendor
+          // 2. OU tem ID começando com btn- (CTAs do site)
+          const isVendor = href.includes(VENDOR_DOMAIN);
+          const isCta = target.id && target.id.startsWith("btn-");
+
+          if (isVendor || isCta) {
+            const finalUrl = buildFinalUrl(href);
+
+            // Se gerou um link diferente do original, fazemos o redirect manual
+            if (finalUrl !== href) {
+              e.preventDefault();
+              e.stopImmediatePropagation(); // Impede outros scripts de rodarem (opcional, mas seguro)
+              window.location.href = finalUrl;
+            }
+          }
+        }, true);
+
+      })();
+  </script>
+</body>
+
+</html>
