@@ -7,9 +7,12 @@ import TermsOfUse from './src/pages/TermsOfUse';
 import Disclaimer from './src/pages/Disclaimer';
 import ContactUs from './src/pages/ContactUs';
 
+import ScrollToAnchor from './src/components/ScrollToAnchor';
+
 const App = () => {
   return (
     <BrowserRouter>
+      <ScrollToAnchor />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />

@@ -321,7 +321,7 @@ const StoryBlock = () => {
 
 const Testimonials = () => {
     return (
-        <section className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
+        <section id="reviews" className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
             <div className="max-w-6xl mx-auto px-4">
                 <h2 className="font-heading text-3xl font-bold mb-10 text-center">Real User Experiences</h2>
 
@@ -554,7 +554,7 @@ const FAQ = () => {
 
 const BonusSection = () => {
     return (
-        <section className="py-20 bg-gradient-to-br from-[#fffbf0] to-[#fff5e0] border-y border-orange-100">
+        <section id="bonuses" className="py-20 bg-gradient-to-br from-[#fffbf0] to-[#fff5e0] border-y border-orange-100">
             <div className="max-w-5xl mx-auto px-4">
                 <div className="text-center mb-16">
                     <div className="inline-block bg-orange-600 text-white text-xs font-bold px-4 py-1.5 rounded-full mb-6 uppercase tracking-widest shadow-sm">
@@ -648,7 +648,7 @@ const BonusSection = () => {
 
 const AvailabilityBox = () => {
     return (
-        <section id="availability" className="py-20 bg-brand-green bg-opacity-5">
+        <section id="guarantee" className="py-20 bg-brand-green bg-opacity-5">
             <div className="max-w-4xl mx-auto px-4 text-center">
                 <div className="bg-white p-10 rounded-3xl shadow-xl border border-gray-200">
                     <h2 className="font-heading text-3xl font-bold text-gray-900 mb-6">Check Official Availability & Offers</h2>
