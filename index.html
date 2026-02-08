@@ -132,7 +132,7 @@
             if (hasNewParams) {
               linkElement.href = url.toString();
               linkElement.dataset.svTrk = 'true'; // Mark as processed
-              console.log(`Sovereign Tracking: Injected into ${linkElement.href}`);
+              console.log(`Sovereign Tracking: [${linkElement.id || 'GLOBAL'}] injected into ${linkElement.href}`);
             }
           } catch (e) {
             // Silent fail for individual link errors to keep site running
