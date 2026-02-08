@@ -118,6 +118,8 @@ const Footer = () => {
                 <div>
                     <h4 className="text-white font-bold mb-4 uppercase text-xs tracking-wider">Useful Links</h4>
                     <ul className="space-y-2">
+                        <li><Link to="/blog" className="hover:text-white transition-colors">Latest Articles</Link></li>
+                        <li><Link to="/about" className="hover:text-white transition-colors">About Us</Link></li>
                         <li><Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
                         <li><Link to="/terms" className="hover:text-white transition-colors">Terms of Use</Link></li>
                         <li><Link to="/disclaimer" className="hover:text-white transition-colors">Disclaimer</Link></li>

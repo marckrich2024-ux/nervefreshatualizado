@@ -231,37 +231,42 @@ const Ingredients = () => {
                             name: "Prickly Pear",
                             sub: "Opuntia ficus-indica",
                             img: "/ingredients/prickly-pear.png",
+                            alt: "Prickly Pear nerve support antioxidant",
                             desc: "More than just a fruit, it acts as a cellular shield. Its rare antioxidants help protect delicate nerve endings from oxidative stress, which is often the root cause of that 'burning' sensation in the feet and hands."
                         },
                         {
                             name: "Passionflower",
                             sub: "Passiflora",
                             img: "/ingredients/passionflower.png",
+                            alt: "Passionflower extract for nerve calming and GABA regulation",
                             desc: "Known as a 'nerve architect,' it helps regulate GABA levels in the brain. This naturally calms an overactive nervous system, reducing the erratic signals that lead to tingling and discomfort."
                         },
                         {
                             name: "Corydalis",
                             sub: "Yanhusuo Plant",
                             img: "/ingredients/corydalis.png",
+                            alt: "Corydalis Yanhusuo plant for natural pain signal interception",
                             desc: "This 'natural guardian' has been used for centuries to intercept pain signals before they reach the brain. It provides deep support for inflammatory discomfort without the side effects of traditional painkillers."
                         },
                         {
                             name: "Marshmallow Root",
                             sub: "Althaea officinalis",
                             img: "/ingredients/marshmallow-root.png",
+                            alt: "Marshmallow Root extract for nerves and soothing inflammation",
                             desc: "Rich in soothing mucilage, this root acts as a natural 'insulator' for irritated nerves. It helps soothe the internal environment, allowing for a more comfortable and peaceful daily routine."
                         },
                         {
                             name: "California Poppy",
                             sub: "Eschscholzia californica",
                             img: "/ingredients/california-poppy.png",
+                            alt: "California Poppy sleep support for nerve restoration",
                             desc: "The ultimate rest-inducer. It targets sleep-interrupting nerve pain, acting as a gentle sedative to ensure your body can finally switch off and begin the nightly process of nerve restoration."
                         }
                     ].map((item, i) => (
                         <div key={i} className="flex flex-col md:flex-row items-center bg-white rounded-xl p-8 shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-gray-100 hover:border-emerald-100 transition-colors">
                             <div className="flex-shrink-0 mb-6 md:mb-0 md:mr-8">
                                 <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-[#2e7d32] shadow-sm">
-                                    <img src={item.img} alt={item.name} className="w-full h-full object-cover" />
+                                    <img src={item.img} alt={item.alt} className="w-full h-full object-cover" />
                                 </div>
                             </div>
                             <div className="text-center md:text-left">
@@ -612,6 +617,7 @@ const BonusSection = () => {
                                 <img
                                     src="/bonuses/The Science of Fat Loss and Transformation (1).png"
                                     alt="Fat Loss Unlocked Book"
+                                    loading="lazy"
                                     className="w-full object-contain filter drop-shadow-xl hover:scale-105 transition-transform duration-300"
                                 />
                             </div>
@@ -639,6 +645,29 @@ const BonusSection = () => {
                                 ))}
                             </ul>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+};
+
+const AuthorBio = () => {
+    return (
+        <section className="bg-white border-t border-gray-100 py-12">
+            <div className="max-w-3xl mx-auto px-4">
+                <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
+                    <div className="flex-shrink-0">
+                        <div className="w-24 h-24 rounded-full bg-gray-200 overflow-hidden border-2 border-brand-green">
+                            <img src="/dr-julian-vance.png" alt="Dr. Julian Vance" loading="lazy" className="w-full h-full object-cover" />
+                        </div>
+                    </div>
+                    <div className="text-center md:text-left">
+                        <h4 className="font-heading text-lg font-bold text-gray-900 mb-1">Dr. Julian Vance</h4>
+                        <p className="text-sm text-brand-green font-medium mb-3">Health Researcher & Medical Journalist</p>
+                        <p className="text-gray-600 text-sm leading-relaxed">
+                            Dr. Vance is a senior contributor to Health Journal Daily, with over 15 years of experience analyzing nutritional supplements and natural health protocols. His work focuses on dissecting clinical data to separate marketing hype from genuine therapeutic value. He advocates for transparency in the supplement industry and evidence-based wellness.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -696,9 +725,69 @@ const Home = () => {
             <ProsCons />
             <Comparison />
             <FAQ />
+            <AuthorBio />
             <BonusSection />
             <AvailabilityBox />
+            <SchemaMarkup />
         </>
+    );
+};
+
+const SchemaMarkup = () => {
+    const questions = [
+        { q: "What is Nerve Fresh exactly?", a: "It is an advanced nutritional supplement formulated to support peripheral nerve health specifically through a precise combination of vitamins, minerals, and botanical extracts." },
+        { q: "How should I take it?", a: "The official recommendation is 2 capsules daily with water, preferably 20-30 minutes before a meal." },
+        { q: "How long until I receive my order?", a: "Orders are typically processed within 24 hours. You can expect delivery within 5 to 8 business days for US addresses." },
+        { q: "Is the formula safe?", a: "Yes. Nerve Fresh is free from gluten, GMOs, and toxins. It is manufactured in an FDA-registered facility following strict GMP guidelines." },
+        { q: "How long to see results?", a: "As it is a natural product, the action is gradual. Many users report initial benefits in 2-3 weeks, with more consistent results after 60-90 days of use." },
+        { q: "How does the guarantee work?", a: "You have a full 180 days to try it risk-free. If you are not satisfied for any reason, simply contact customer support for a full refund of your purchase price." },
+        { q: "Do I need a prescription?", a: "No. Nerve Fresh is classified as a dietary supplement, not a medication. However, if you have pre-existing health conditions, consult your doctor." }
+    ];
+
+    const schemaData = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Product",
+                "name": "Nerve Fresh",
+                "description": "Natural nerve support supplement with Prickly Pear and Corydalis Yanhusuo.",
+                "image": "https://www.the-health-journal.com/product.jpg",
+                "brand": {
+                    "@type": "Brand",
+                    "name": "Nerve Fresh"
+                },
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.8",
+                    "reviewCount": "1240"
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "url": "https://secure.nervefresh.com/index-is?&shield=4738aggfr4rkiymitn38phqims",
+                    "priceCurrency": "USD",
+                    "price": "49.00",
+                    "availability": "https://schema.org/InStock"
+                }
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": questions.map(q => ({
+                    "@type": "Question",
+                    "name": q.q,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": q.a
+                    }
+                }))
+            }
+        ]
+    };
+
+    return (
+        <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+        />
     );
 };
 

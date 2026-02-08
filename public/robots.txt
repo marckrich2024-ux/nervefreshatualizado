@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.the-health-journal.com/sitemap.xml
