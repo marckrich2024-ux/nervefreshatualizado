@@ -74,22 +74,29 @@
   <div id="root"></div>
   <script type="module" src="/index.tsx"></script>
   <script>
-      < script >
       (function () {
         /**
-         * Sovereign Tracking System - High Availability (v2)
-         * Requirements: Immediate Capture, URL Param Persist (localStorage), Loop Injection (0s, 2s), Redundancy Check.
+         * Sovereign Tracking System - v3 Universal Fail-Safe
+         * Critical Mission: Ensure GCLID/CLID reaches ClickBank checkout at all costs.
+         * 
+         * Layers of Protection:
+         * 1. Persistence: Saves params to LocalStorage immediately.
+         * 2. Visual: Aggressively updates hrefs every 500ms so users see the correct link.
+         * 3. Interceptor (The Nuclear Option): Listens to CLICKS globally. Even if React wipes the href
+         *    at the last millisecond, this interceptor catches the click, rebuilds the URL with params,
+         *    and forces the correct navigation.
          */
         const STORAGE_KEY = 'ads_tracking_data';
         const TARGET_DOMAIN = 'secure.nervefresh.com';
-        const TRACKING_PARAMS = ['gclid', 'wbraid', 'gbraid'];
+        const TRACKING_PARAMS = ['gclid', 'wbraid', 'gbraid', 'clid'];
 
+        // --- 1. Persistence Layer ---
         function safeGetStorage() {
           try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; } catch { return {}; }
         }
 
         function safeSetStorage(data) {
-          try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch (e) { console.warn('Storage error', e); }
+          try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch (e) { console.warn('Storage warn', e); }
         }
 
         function captureAndSave() {
@@ -108,57 +115,66 @@
           if (updated) safeSetStorage(storage);
         }
 
-        function injectTracking() {
+        // --- 2. URL Builder Helper ---
+        function buildSecureUrl(originalHref, data) {
+          try {
+            const url = new URL(originalHref, window.location.origin);
+            Object.entries(data).forEach(([key, value]) => {
+              if (!url.searchParams.has(key)) {
+                url.searchParams.set(key, value);
+              }
+            });
+            return url.toString();
+          } catch (e) {
+            return originalHref;
+          }
+        }
+
+        // --- 3. Visual Layer (The "Nice" Way) ---
+        function updateVisibleLinks() {
           const data = safeGetStorage();
           if (Object.keys(data).length === 0) return;
 
-          // Varredura de Links conforme solicitado
-          const links = document.querySelectorAll(`a[href*="${TARGET_DOMAIN}"]`);
-
-          links.forEach(link => {
-            try {
-              // Evitar re-processamento desnecessário, mas garantir que parametrização ocorra
-              let href = link.href;
-              const url = new URL(href, window.location.origin);
-              let hasChanges = false;
-
-              Object.entries(data).forEach(([key, value]) => {
-                if (!url.searchParams.has(key)) {
-                  url.searchParams.append(key, value);
-                  hasChanges = true;
-                }
-              });
-
-              if (hasChanges) {
-                link.href = url.toString();
-                // Log de Confirmação exato solicitado
-                console.log('DOMÍNIO SOBERANO: Link atualizado com sucesso', link.href);
-              }
-            } catch (err) {
-              console.error('Sovereign Error:', err);
+          document.querySelectorAll(`a[href*="${TARGET_DOMAIN}"]`).forEach(link => {
+            const newHref = buildSecureUrl(link.href, data);
+            if (link.href !== newHref) {
+              link.href = newHref;
+              link.setAttribute('data-tracked', 'true');
             }
           });
         }
 
-        // 1. Captura Imediata
+        // --- 4. Interceptor Layer (The "Fail-Safe" Way) ---
+        function activateInterceptor() {
+          window.addEventListener('click', function (e) {
+            const target = e.target.closest('a');
+            if (!target) return;
+
+            const href = target.href;
+            if (!href || !href.includes(TARGET_DOMAIN)) return;
+
+            const currentData = safeGetStorage();
+            if (Object.keys(currentData).length === 0) return;
+
+            const finalUrl = buildSecureUrl(href, currentData);
+
+            if (href !== finalUrl) {
+              e.preventDefault();
+              e.stopPropagation();
+              console.log('DOMÍNIO SOBERANO: Interceptação de clique! Redirecionando para:', finalUrl);
+              window.location.href = finalUrl;
+            } else {
+              console.log('DOMÍNIO SOBERANO: Link já estava seguro. Navegando normalmente.');
+            }
+          }, true);
+        }
+
         captureAndSave();
+        setInterval(updateVisibleLinks, 1000);
+        updateVisibleLinks();
+        activateInterceptor();
 
-        // 2. Injeção Inicial
-        injectTracking();
-
-        // 3. Injeção em Loop (após 2 segundos) para garantir carregamento tardio
-        setTimeout(injectTracking, 2000);
-
-        // 4. MutationObserver para redundância (High Availability real)
-        // Mantemos isso pois frameworks reativos podem recriar o DOM a qualquer momento, não só em 2s
-        const observer = new MutationObserver((mutations) => {
-          let shouldRun = false;
-          for (let m of mutations) {
-            if (m.addedNodes.length) { shouldRun = true; break; }
-          }
-          if (shouldRun) injectTracking();
-        });
-        observer.observe(document.body, { childList: true, subtree: true });
+        console.log('DOMÍNIO SOBERANO: Sistema de Rastreamento Blindado v3 ATIVADO.');
 
       })();
   </script>
