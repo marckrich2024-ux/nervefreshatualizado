@@ -74,104 +74,102 @@
   <div id="root"></div>
   <script type="module" src="/index.tsx"></script>
   <script>
+      < script >
       (function () {
-        const COOKIE_NAME = "ads_click_ids";
-        const COOKIE_DAYS = 90;
-        const VENDOR_DOMAIN = "secure.nervefresh.com";
+        /**
+         * Sovereign Tracking System - High Availability
+         * Targets: Google Ads (gclid, wbraid, gbraid) & ClickBank
+         * Features: LocalStorage Persistence, DOM Mutation Observer, Smart Injection
+         */
+        const STORAGE_KEY = 'ads_tracking_data';
+        const TARGET_DOMAIN = 'secure.nervefresh.com';
+        const TRACKING_PARAMS = ['gclid', 'wbraid', 'gbraid'];
 
-        // MAPA DE PARÂMETROS:
-        // A chave é como vai pro ClickBank (clid)
-        // O valor é o que pegamos da URL/Cookie (gclid)
-        const OUT_TO_IN_MAP = {
-          "clid": "gclid",     // ClickBank exige 'clid', nós pegamos 'gclid'
-          "wbraid": "wbraid",
-          "gbraid": "gbraid",
-          "gclid": "gclid"     // Mandamos o original também por garantia
-        };
-
-        // --- Helpers de Cookie/URL ---
-        function qs(key) {
-          return new URLSearchParams(window.location.search).get(key);
-        }
-        function setCookie(name, value, days) {
-          const maxAge = days * 24 * 60 * 60;
-          document.cookie = `${name}=${encodeURIComponent(value)}; Max-Age=${maxAge}; Path=/; SameSite=Lax`;
-        }
-        function getCookie(name) {
-          const match = document.cookie.match(new RegExp("(^| )" + name + "=([^;]+)"));
-          return match ? decodeURIComponent(match[2]) : null;
-        }
-        function safeParse(str) {
-          try { return JSON.parse(str); } catch { return {}; }
+        // --- Core Logic ---
+        function safeGetStorage() {
+          try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; } catch { return {}; }
         }
 
-        // --- 1. Captura e Persistência (Executa no Load) ---
-        const captured = {};
-        const uniqueKeys = new Set(Object.values(OUT_TO_IN_MAP));
-        uniqueKeys.forEach(k => {
-          const v = qs(k);
-          if (v) captured[k] = v;
-        });
+        function safeSetStorage(data) {
+          try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch (e) { console.warn('Tracking storage failed', e); }
+        }
 
-        const stored = safeParse(getCookie(COOKIE_NAME) || "{}");
-        const merged = Object.assign({}, stored, captured);
-        setCookie(COOKIE_NAME, JSON.stringify(merged), COOKIE_DAYS);
+        function captureParams() {
+          const urlParams = new URLSearchParams(window.location.search);
+          let storage = safeGetStorage();
+          let updated = false;
 
-        // --- 2. Função que Constrói a URL Final ---
-        function buildFinalUrl(originalUrl) {
+          TRACKING_PARAMS.forEach(param => {
+            const value = urlParams.get(param);
+            if (value) {
+              storage[param] = value;
+              updated = true;
+            }
+          });
+
+          if (updated) safeSetStorage(storage);
+          return storage;
+        }
+
+        function injectTracking(linkElement, data) {
           try {
-            const url = new URL(originalUrl, window.location.origin);
+            // Prevention: Check if already processed to avoid infinite loops or double logging if observer fires multiple times
+            if (linkElement.dataset.svTrk === 'true') return;
 
-            // Se não for link do produto e nem for os botões de CTA, não mexe?
-            // Mas aqui a gente garante validando o domínio ou o contexto antes de chamar.
+            let href = linkElement.getAttribute('href');
+            if (!href || !href.includes(TARGET_DOMAIN)) return;
 
-            Object.keys(OUT_TO_IN_MAP).forEach(outKey => {
-              const inKey = OUT_TO_IN_MAP[outKey];
-              const value = qs(inKey) || merged[inKey]; // URL atual ganha do cookie
+            const url = new URL(href, window.location.origin); // Handle relative & absolute params safely
+            let hasNewParams = false;
 
-              // Só adiciona se tiver valor e ainda não existir na URL de destino (ou sobrescreve?)
-              // Melhor sobrescrever/garantir pra evitar envio vazio
-              if (value) {
-                url.searchParams.set(outKey, value);
+            Object.entries(data).forEach(([key, value]) => {
+              if (value && !url.searchParams.has(key)) {
+                url.searchParams.set(key, value);
+                hasNewParams = true;
               }
             });
-            return url.toString();
+
+            if (hasNewParams) {
+              linkElement.href = url.toString();
+              linkElement.dataset.svTrk = 'true'; // Mark as processed
+              console.log(`Sovereign Tracking: Injected into ${linkElement.href}`);
+            }
           } catch (e) {
-            return originalUrl;
+            // Silent fail for individual link errors to keep site running
           }
         }
 
-        // --- 3. Event Listener Global (Interceptor "Pro") ---
-        // Usa capture=true para pegar o evento o mais cedo possível
-        document.addEventListener("click", function (e) {
-          // Procura o elemento clicado que seja link ou nossos botões
-          const target = e.target.closest("a[href], [id^='btn-']");
+        function runAudit() {
+          const data = safeGetStorage();
+          if (Object.keys(data).length === 0) return;
 
-          if (!target) return;
+          document.querySelectorAll(`a[href*="${TARGET_DOMAIN}"]`).forEach(link => injectTracking(link, data));
+        }
 
-          let href = target.getAttribute("href") || target.getAttribute("data-href");
+        // --- Initialization ---
+        // 1. Capture immediately
+        captureParams();
 
-          // Se não tem link, não temos o que fazer (a menos que seja navegação 100% JS sem URL)
-          if (!href) return;
+        // 2. Run on Load
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', runAudit);
+        } else {
+          runAudit();
+        }
 
-          // Verifica se é um link que devemos interceptar
-          // 1. Aponta pro domínio do vendor
-          // 2. OU tem ID começando com btn- (CTAs do site)
-          const isVendor = href.includes(VENDOR_DOMAIN);
-          const isCta = target.id && target.id.startsWith("btn-");
-
-          if (isVendor || isCta) {
-            const finalUrl = buildFinalUrl(href);
-
-            // Se gerou um link diferente do original, fazemos o redirect manual
-            if (finalUrl !== href) {
-              e.preventDefault();
-              e.stopImmediatePropagation(); // Impede outros scripts de rodarem (opcional, mas seguro)
-              window.location.href = finalUrl;
+        // 3. High Availability Observer (For React/Dynamic Content)
+        const observer = new MutationObserver((mutations) => {
+          let shouldRun = false;
+          for (const mutation of mutations) {
+            if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+              shouldRun = true;
+              break;
             }
           }
-        }, true);
+          if (shouldRun) runAudit();
+        });
 
+        observer.observe(document.body, { childList: true, subtree: true });
       })();
   </script>
 </body>
