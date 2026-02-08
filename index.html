@@ -77,24 +77,22 @@
       < script >
       (function () {
         /**
-         * Sovereign Tracking System - High Availability
-         * Targets: Google Ads (gclid, wbraid, gbraid) & ClickBank
-         * Features: LocalStorage Persistence, DOM Mutation Observer, Smart Injection
+         * Sovereign Tracking System - High Availability (v2)
+         * Requirements: Immediate Capture, URL Param Persist (localStorage), Loop Injection (0s, 2s), Redundancy Check.
          */
         const STORAGE_KEY = 'ads_tracking_data';
         const TARGET_DOMAIN = 'secure.nervefresh.com';
         const TRACKING_PARAMS = ['gclid', 'wbraid', 'gbraid'];
 
-        // --- Core Logic ---
         function safeGetStorage() {
           try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; } catch { return {}; }
         }
 
         function safeSetStorage(data) {
-          try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch (e) { console.warn('Tracking storage failed', e); }
+          try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch (e) { console.warn('Storage error', e); }
         }
 
-        function captureParams() {
+        function captureAndSave() {
           const urlParams = new URLSearchParams(window.location.search);
           let storage = safeGetStorage();
           let updated = false;
@@ -108,68 +106,60 @@
           });
 
           if (updated) safeSetStorage(storage);
-          return storage;
         }
 
-        function injectTracking(linkElement, data) {
-          try {
-            // Prevention: Check if already processed to avoid infinite loops or double logging if observer fires multiple times
-            if (linkElement.dataset.svTrk === 'true') return;
-
-            let href = linkElement.getAttribute('href');
-            if (!href || !href.includes(TARGET_DOMAIN)) return;
-
-            const url = new URL(href, window.location.origin); // Handle relative & absolute params safely
-            let hasNewParams = false;
-
-            Object.entries(data).forEach(([key, value]) => {
-              if (value && !url.searchParams.has(key)) {
-                url.searchParams.set(key, value);
-                hasNewParams = true;
-              }
-            });
-
-            if (hasNewParams) {
-              linkElement.href = url.toString();
-              linkElement.dataset.svTrk = 'true'; // Mark as processed
-              console.log(`Sovereign Tracking: [${linkElement.id || 'GLOBAL'}] injected into ${linkElement.href}`);
-            }
-          } catch (e) {
-            // Silent fail for individual link errors to keep site running
-          }
-        }
-
-        function runAudit() {
+        function injectTracking() {
           const data = safeGetStorage();
           if (Object.keys(data).length === 0) return;
 
-          document.querySelectorAll(`a[href*="${TARGET_DOMAIN}"]`).forEach(link => injectTracking(link, data));
+          // Varredura de Links conforme solicitado
+          const links = document.querySelectorAll(`a[href*="${TARGET_DOMAIN}"]`);
+
+          links.forEach(link => {
+            try {
+              // Evitar re-processamento desnecessário, mas garantir que parametrização ocorra
+              let href = link.href;
+              const url = new URL(href, window.location.origin);
+              let hasChanges = false;
+
+              Object.entries(data).forEach(([key, value]) => {
+                if (!url.searchParams.has(key)) {
+                  url.searchParams.append(key, value);
+                  hasChanges = true;
+                }
+              });
+
+              if (hasChanges) {
+                link.href = url.toString();
+                // Log de Confirmação exato solicitado
+                console.log('DOMÍNIO SOBERANO: Link atualizado com sucesso', link.href);
+              }
+            } catch (err) {
+              console.error('Sovereign Error:', err);
+            }
+          });
         }
 
-        // --- Initialization ---
-        // 1. Capture immediately
-        captureParams();
+        // 1. Captura Imediata
+        captureAndSave();
 
-        // 2. Run on Load
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', runAudit);
-        } else {
-          runAudit();
-        }
+        // 2. Injeção Inicial
+        injectTracking();
 
-        // 3. High Availability Observer (For React/Dynamic Content)
+        // 3. Injeção em Loop (após 2 segundos) para garantir carregamento tardio
+        setTimeout(injectTracking, 2000);
+
+        // 4. MutationObserver para redundância (High Availability real)
+        // Mantemos isso pois frameworks reativos podem recriar o DOM a qualquer momento, não só em 2s
         const observer = new MutationObserver((mutations) => {
           let shouldRun = false;
-          for (const mutation of mutations) {
-            if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
-              shouldRun = true;
-              break;
-            }
+          for (let m of mutations) {
+            if (m.addedNodes.length) { shouldRun = true; break; }
           }
-          if (shouldRun) runAudit();
+          if (shouldRun) injectTracking();
         });
-
         observer.observe(document.body, { childList: true, subtree: true });
+
       })();
   </script>
 </body>
