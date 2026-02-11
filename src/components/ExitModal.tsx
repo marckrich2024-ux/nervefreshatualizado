@@ -6,9 +6,28 @@ const OFFER_URL = "https://secure.nervefresh.com/index-is?&shield=4738aggfr4rkiy
 const ExitModal = () => {
     const [isVisible, setIsVisible] = useState(false);
     const [hasShocked, setHasShocked] = useState(false);
+    const [isSafeToTrigger, setIsSafeToTrigger] = useState(false);
+
+    useEffect(() => {
+        // Safety delay: Only arm the exit intent after 5 seconds
+        // This prevents the modal from showing immediately if the user's mouse 
+        // is already outside the window on load.
+        const timer = setTimeout(() => {
+            setIsSafeToTrigger(true);
+        }, 5000);
+
+        return () => clearTimeout(timer);
+    }, []);
 
     useEffect(() => {
         const handleMouseLeave = (e: MouseEvent) => {
+            // Strict checks:
+            // 1. Must be safe to trigger (after 5s delay)
+            // 2. Mouse must be moving off the TOP of the viewport (intent to close/switch tab)
+            // 3. Haven't shown it in this session already
+            // 4. Haven't shown it ever (localStorage)
+            if (!isSafeToTrigger) return;
+
             if (e.clientY <= 0 && !hasShocked && !localStorage.getItem('exit_intent_shown')) {
                 setIsVisible(true);
                 setHasShocked(true);
@@ -18,7 +37,7 @@ const ExitModal = () => {
 
         document.addEventListener('mouseleave', handleMouseLeave);
         return () => document.removeEventListener('mouseleave', handleMouseLeave);
-    }, [hasShocked]);
+    }, [hasShocked, isSafeToTrigger]);
 
     const handleClose = () => {
         setIsVisible(false);
