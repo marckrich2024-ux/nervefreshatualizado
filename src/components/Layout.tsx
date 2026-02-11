@@ -9,6 +9,7 @@ import {
     Check,
     Info
 } from 'lucide-react';
+import ExitModal from './ExitModal';
 
 // --- CONFIGURATION ---
 const OFFER_URL = "https://secure.nervefresh.com/index-is?&shield=4738aggfr4rkiymitn38phqims";
@@ -60,13 +61,12 @@ const Header = () => {
                         <a href="/#faq" onClick={() => handleLinkClick('faq')} className="font-medium text-gray-600 hover:text-brand-green uppercase text-sm tracking-wide">FAQ</a>
                     </nav>
 
-                    {/* Desktop CTA */}
                     <div className="hidden md:block">
                         <a
                             href={OFFER_URL}
                             id="btn-nav-check"
                             onClick={() => trackEvent('cta_click', { cta_id: 'btn-nav-check' })}
-                            className="bg-brand-green hover:bg-brand-darkGreen text-white font-bold py-2 px-6 rounded-lg text-sm transition-colors shadow-md uppercase flex items-center"
+                            className="bg-brand-green hover:bg-brand-darkGreen text-white font-bold py-2 px-6 rounded-lg text-sm transition-colors shadow-md uppercase flex items-center animate-pulse hover:animate-none"
                         >
                             Check Official Availability <ExternalLink className="w-4 h-4 ml-2 opacity-80" />
                         </a>
@@ -135,6 +135,16 @@ const Footer = () => {
                         <strong>Affiliate Disclosure:</strong> We may earn a commission if you purchase through our link, at no extra cost to you. This helps support our research and editorial team.
                     </p>
                 </div>
+                <div>
+                    <h4 className="text-white font-bold mb-4 uppercase text-xs tracking-wider">Scientific References</h4>
+                    <ul className="space-y-2 text-xs text-gray-500">
+                        <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3896593/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Current Biology (2014) - DHCB</a></li>
+                        <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7143924/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Phytother Res (2020) - Marshmallow Root</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/29113066/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">PubMed - Prickly Pear BBB</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/15814264/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Phytotherapy Research - Antioxidants</a></li>
+                        <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4049052/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">NCBI - Hydrotherapy Clinical Basis</a></li>
+                    </ul>
+                </div>
             </div>
         </footer>
     );
@@ -181,11 +191,12 @@ const Layout = () => {
     return (
         <div className="min-h-screen font-sans text-gray-800 bg-white selection:bg-green-100 selection:text-green-900 flex flex-col">
             <Header />
-            <main className="flex-grow">
+            <main className="flex-grow animate-fade-in">
                 <Outlet />
             </main>
             <Footer />
             <StickerCTA />
+            <ExitModal />
         </div>
     );
 };

@@ -16,7 +16,7 @@ export const blogPosts: BlogPost[] = [
         title: 'Nerve Fresh vs. Nerve Control 911: Which Is Better in 2026? A Clinical Comparison',
         excerpt: 'We compared the top two nerve support supplements side-by-side. Our analysis reveals why ingredient transparency makes one the clear winner for neuropathy support.',
         date: 'February 8, 2026',
-        author: 'Dr. Julian Vance',
+        author: 'Dr. Mikel Daniels',
         image: '/product.jpg',
         content: `
             <p>In the landscape of neuropathy management, two names dominate the conversation in 2026: <strong>Nerve Fresh</strong> and <strong>Nerve Control 911</strong>. Both promise to alleviate the burning, tingling, and numbness associated with peripheral nerve damage, but their approaches are fundamentally different.</p>
@@ -98,7 +98,7 @@ export const blogPosts: BlogPost[] = [
         title: 'The Science Behind Prickly Pear: Nature’s Neuro-Shield',
         excerpt: 'It is not just a cactus. It is a reservoir of Betalains. We explore the 2024 citations that prove Prickly Pear can cross the blood-brain barrier to save dying nerves.',
         date: 'February 5, 2026',
-        author: 'Dr. Julian Vance',
+        author: 'Dr. Mikel Daniels',
         image: '/ingredients/prickly-pear.png',
         content: `
             <p>For decades, the Prickly Pear cactus (<em>Opuntia ficus-indica</em>) was dismissed as merely a source of fiber or a hangover cure. Recent neuroscientific literature has shattered this perception, revealing it to be one of the most potent neuroprotective agents in nature.</p>
@@ -168,7 +168,7 @@ export const blogPosts: BlogPost[] = [
         title: '5 Natural Ways to Support Peripheral Nerve Health (Protocols Included)',
         excerpt: 'Supplements are the fuel, but lifestyle is the engine. Here are 5 specific, clinically-backed protocols to accelerate your nerve repair.',
         date: 'January 28, 2026',
-        author: 'Dr. Julian Vance',
+        author: 'Dr. Mikel Daniels',
         image: '/product.jpg',
         content: `
             <p>As effective as Nerve Fresh is, it works best in a body that fights for itself. I prescribe these 5 lifestyle protocols to all my patients to supercharge their results.</p>
@@ -203,7 +203,7 @@ export const blogPosts: BlogPost[] = [
         title: 'Nerve Fresh Ingredients: Safety, Toxicology, and Efficacy Report',
         excerpt: 'Is it safe? Is it GRAS? We analyze the toxicology of Corydalis, Passionflower, and Prickly Pear to ensure you know exactly what you are putting in your body.',
         date: 'January 20, 2026',
-        author: 'Dr. Julian Vance',
+        author: 'Dr. Mikel Daniels',
         image: '/ingredients/passionflower.png',
         content: `
             <p>Transparency is the antidote to skepticism. In this report, we dissect the safety profile and molecular role of every ingredient in the Nerve Fresh formula.</p>
@@ -235,4 +235,5 @@ export const blogPosts: BlogPost[] = [
             <p>The Nerve Fresh formula avoids the "kitchen sink" approach. It uses moderate, clinically relevant dosages of 5 synergistic plants. There are no heavy metals, no synthetic fillers, and no habit-forming substances. It is safe for long-term daily use for healthy adults.</p>
         `
     }
+
 ];

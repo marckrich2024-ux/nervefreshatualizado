@@ -2,10 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, User, ArrowRight } from 'lucide-react';
 import { blogPosts } from '../data/blogPosts';
+import SEOHead from '../components/SEOHead';
 
 const Blog = () => {
     return (
         <div className="bg-gray-50 min-h-screen py-16">
+            <SEOHead
+                title="Blog - Health Journal Daily"
+                description="Latest research, tips, and deep dives into nerve health and natural supplementation."
+            />
             <div className="max-w-6xl mx-auto px-4">
                 <div className="text-center mb-16">
                     <h1 className="font-heading text-4xl font-bold text-gray-900 mb-4">Health Journal Daily <span className="text-brand-green">Blog</span></h1>

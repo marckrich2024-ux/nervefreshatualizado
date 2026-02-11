@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { Calendar, User, ArrowLeft, ExternalLink } from 'lucide-react';
 import { blogPosts } from '../data/blogPosts';
+import SEOHead from '../components/SEOHead';
 
 const BlogPost = () => {
     const { slug } = useParams<{ slug: string }>();
@@ -26,6 +27,12 @@ const BlogPost = () => {
 
     return (
         <div className="bg-white min-h-screen pb-20">
+            <SEOHead
+                title={`${post.title} - Health Journal Daily`}
+                description={post.excerpt}
+                image={post.image}
+                type="article"
+            />
             {/* Header / Breadcrumb */}
             <div className="bg-gray-50 border-b border-gray-200 py-8">
                 <div className="max-w-3xl mx-auto px-4">

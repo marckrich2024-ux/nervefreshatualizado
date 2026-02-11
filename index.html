@@ -138,7 +138,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet">
 
   <script>
@@ -146,22 +146,38 @@
       theme: {
         extend: {
           fontFamily: {
-            sans: ['Roboto', 'Inter', 'sans-serif'], // Body font
-            heading: ['Montserrat', 'sans-serif'], // Heading font
+            sans: ['Inter', 'sans-serif'], // Body font
+            serif: ['Merriweather', 'serif'], // Heading font
+            mono: ['JetBrains Mono', 'monospace'], // Data font
           },
           colors: {
-            brand: {
-              green: '#1E984E',
-              darkGreen: '#167a3d',
-              lightGreen: '#e6f4ea'
+            base: '#FAFAF7',
+            text: {
+              main: '#2D3748',
+              muted: '#64748B',
             },
-            medical: {
-              50: '#f0f9ff',
-              100: '#e0f2fe',
-              500: '#0ea5e9',
-              600: '#0284c7',
-              700: '#0369a1',
-              900: '#0c4a6e',
+            accent: {
+              DEFAULT: '#0D9488',
+              hover: '#0F766E',
+            },
+            alert: '#E05A3A',
+            success: '#16A34A',
+            slate: {
+              soft: '#F1F5F9',
+              deep: '#2D3748',
+            },
+            brand: {
+              green: '#16A34A',
+              darkGreen: '#15803D',
+            }
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.8s ease-out forwards',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0', transform: 'translateY(10px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
             }
           }
         }
@@ -175,7 +191,7 @@
     }
   </style>
 
-  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="/index.css">
 </head>
 
