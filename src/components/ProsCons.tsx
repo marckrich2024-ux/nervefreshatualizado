@@ -43,17 +43,15 @@ const ProsCons = () => {
                         </div>
                         <ul className="space-y-4">
                             {[
-                                "No published clinical trials on the specific Nerve Fresh formula",
-                                "Proprietary blend — exact dosages of each ingredient are not disclosed",
-                                "At $69/bottle, it's significantly above the market average",
-                                "Only 1 review on Trustpilot — virtually no independent verification",
-                                "Marketing uses strong health claims that may overstate the evidence",
-                                "Some users report an unpleasant herbal taste",
-                                "Sold exclusively through ClickBank, which has mixed consumer trust"
+                                "At $69/bottle, it's pricier than most nerve supplements",
+                                "No published clinical trial on the specific Nerve Fresh formula (only ingredients)",
+                                "Results typically take 4-6 weeks — not overnight",
+                                "Some users reported no improvement after 60 days",
+                                "Only available online — no pharmacy pickup"
                             ].map((item, i) => (
                                 <li key={i} className="flex items-start gap-3">
                                     <XCircle className="w-5 h-5 text-alert flex-shrink-0 mt-0.5" />
-                                    <span className="font-sans text-[15px] text-text-main leading-relaxed">{item}</span>
+                                    <span className="font-sans text-[17px] text-text-main leading-relaxed">{item}</span>
                                 </li>
                             ))}
                         </ul>

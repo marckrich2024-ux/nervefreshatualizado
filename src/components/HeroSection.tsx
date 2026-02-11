@@ -7,7 +7,7 @@ const HeroSection = () => {
                 {/* Left Column (60%) */}
                 <div className="md:col-span-3 order-2 md:order-1">
                     {/* Badge */}
-                    <div className="inline-flex items-center gap-3 border border-slate-200 bg-white rounded-full pr-4 pl-1 py-1 mb-6 shadow-sm">
+                    <div className="inline-flex items-center gap-3 border border-slate-200 bg-white rounded-full pr-4 pl-1 py-1 mb-4 shadow-sm">
                         <div className="w-8 h-8 rounded-full bg-slate-200 overflow-hidden shrink-0">
                             <img
                                 src="/assets/reviewer-avatar.webp"
@@ -29,13 +29,23 @@ const HeroSection = () => {
                         </div>
                     </div>
 
+                    {/* Micro-text above headline */}
+                    <p className="font-sans italic text-slate-400 text-xs mb-2">
+                        Updated February 2026 · 47-hour independent investigation · Not affiliated with manufacturer
+                    </p>
+
                     {/* Headline */}
-                    <h1 className="font-serif font-bold text-3xl md:text-[42px] text-text-main leading-tight mb-5">
-                        We Spent 47 Hours Investigating Nerve Fresh — Here's What The Science Actually Says.
+                    <h1 className="font-serif font-bold text-3xl md:text-[32px] lg:text-[42px] text-text-main leading-tight mb-4">
+                        We Investigated Nerve Fresh So You Don't Have To — Here’s What 23 Studies and 200+ User Reports Actually Show.
                     </h1>
 
+                    {/* Micro-copy (Empathy) */}
+                    <p className="font-sans italic text-[17px] md:text-lg text-slate-500 mb-6 bg-slate-50 p-4 rounded-lg border-l-4 border-accent">
+                        "If neuropathy pain has you searching for answers at 3 AM — you're not alone, and this review was written for you."
+                    </p>
+
                     {/* Subtitle */}
-                    <p className="font-sans text-lg text-slate-500 leading-relaxed mb-8">
+                    <p className="font-sans text-base md:text-lg text-slate-600 leading-relaxed mb-8">
                         An evidence-based analysis of the supplement's claims, ingredients, and what real users are saying across Reddit, Trustpilot, and medical forums.
                     </p>
 

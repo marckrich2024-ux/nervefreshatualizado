@@ -33,15 +33,18 @@ const FinalVerdict = () => {
                 </div>
 
                 <div className="flex flex-col items-center gap-4">
+                    <p className="font-sans font-medium text-[17px] text-text-main mb-2 max-w-[500px]">
+                        "We know you've been disappointed before. That's exactly why the 180-day guarantee matters — it's not your money on the line, it's theirs."
+                    </p>
                     <a
                         href={OFFER_URL}
                         id="btn-final-check"
                         onClick={() => trackEvent('cta_click', { cta_id: 'btn-final-check' })}
-                        className="w-full sm:w-auto bg-alert hover:bg-alert-hover text-white font-sans font-bold py-5 px-10 rounded-lg shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-1 uppercase tracking-wider flex items-center justify-center gap-2"
+                        className="w-full sm:w-auto bg-alert hover:bg-alert-hover text-white font-sans font-bold text-[18px] py-5 px-10 rounded-lg shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-1 uppercase tracking-wider flex items-center justify-center gap-2"
                     >
-                        Visit Official Website <ArrowRight className="w-5 h-5" />
+                        Check Current Pricing & Availability <ArrowRight className="w-5 h-5" />
                     </a>
-                    <span className="flex items-center text-[13px] text-slate-400">
+                    <span className="flex items-center text-[14px] text-slate-400">
                         <ShieldCheck className="w-4 h-4 mr-1" /> Secure Manufacturer Checkout
                     </span>
                 </div>
