@@ -76,6 +76,7 @@ const Header = () => {
                     <button
                         className="md:hidden text-gray-700"
                         onClick={() => setIsOpen(!isOpen)}
+                        aria-label="Toggle navigation menu"
                     >
                         {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
                     </button>
@@ -92,6 +93,7 @@ const Header = () => {
                             id="btn-header-mobile"
                             onClick={() => trackEvent('cta_click', { cta_id: 'btn-header-mobile' })}
                             className="bg-brand-green text-white font-bold py-3 px-8 rounded-lg w-[90%] text-center shadow-lg uppercase"
+                            aria-label="Check availability and pricing"
                         >
                             Check Availability & Pricing
                         </a>
@@ -104,14 +106,14 @@ const Header = () => {
 
 const Footer = () => {
     return (
-        <footer className="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
+        <footer className="bg-gray-900 text-gray-300 py-12 border-t border-gray-800">
             <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-4 gap-8 text-sm">
                 <div className="col-span-1 md:col-span-2">
                     <div className="font-heading text-white font-bold text-xl mb-4">Health Journal Daily</div>
-                    <p className="mb-4">
+                    <p className="mb-4 text-gray-400">
                         Our mission is to provide honest, evidence-based reviews to help you make better health decisions.
                     </p>
-                    <p className="text-xs text-gray-600">
+                    <p className="text-xs text-gray-500">
                         &copy; {new Date().getFullYear()} Health Journal Daily. All rights reserved.
                     </p>
                 </div>
@@ -128,21 +130,21 @@ const Footer = () => {
                 </div>
                 <div>
                     <h4 className="text-white font-bold mb-4 uppercase text-xs tracking-wider">Important Disclaimer</h4>
-                    <p className="text-xs leading-relaxed mb-4">
+                    <p className="text-xs leading-relaxed mb-4 text-gray-400">
                         <strong>Medical Disclaimer:</strong> This content is for informational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician with any questions you may have regarding a medical condition.
                     </p>
-                    <p className="text-xs leading-relaxed">
+                    <p className="text-xs leading-relaxed text-gray-400">
                         <strong>Affiliate Disclosure:</strong> We may earn a commission if you purchase through our link, at no extra cost to you. This helps support our research and editorial team.
                     </p>
                 </div>
                 <div>
                     <h4 className="text-white font-bold mb-4 uppercase text-xs tracking-wider">Scientific References</h4>
                     <ul className="space-y-2 text-xs text-gray-500">
-                        <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3896593/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Current Biology (2014) - DHCB</a></li>
-                        <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7143924/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Phytother Res (2020) - Marshmallow Root</a></li>
-                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/29113066/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">PubMed - Prickly Pear BBB</a></li>
-                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/15814264/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Phytotherapy Research - Antioxidants</a></li>
-                        <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4049052/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">NCBI - Hydrotherapy Clinical Basis</a></li>
+                        <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3896593/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="Reference: Current Biology (2014) - DHCB">Current Biology (2014) - DHCB</a></li>
+                        <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7143924/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="Reference: Phytother Res (2020) - Marshmallow Root">Phytother Res (2020) - Marshmallow Root</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/29113066/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="Reference: PubMed - Prickly Pear BBB">PubMed - Prickly Pear BBB</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/15814264/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="Reference: Phytotherapy Research - Antioxidants">Phytotherapy Research - Antioxidants</a></li>
+                        <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4049052/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="Reference: NCBI - Hydrotherapy Clinical Basis">NCBI - Hydrotherapy Clinical Basis</a></li>
                     </ul>
                 </div>
             </div>
@@ -179,6 +181,7 @@ const StickerCTA = () => {
                     id="btn-sticky-mobile"
                     onClick={() => trackEvent('cta_click', { cta_id: 'btn-sticky-mobile' })}
                     className="flex-1 bg-brand-green text-white font-bold py-3 rounded-lg text-center uppercase text-sm shadow-md"
+                    aria-label="View official details and check stock"
                 >
                     View Official Details
                 </a>

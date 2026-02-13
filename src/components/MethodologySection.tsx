@@ -60,7 +60,7 @@ const MethodologySection = () => {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                     </div>
-                    <p className="font-sans text-[14px] text-slate-500 leading-relaxed">
+                    <p className="font-sans text-[14px] text-slate-600 leading-relaxed">
                         This review was conducted independently. We may earn a commission if you purchase through our links, but this does not influence our analysis or ratings. Our methodology is the same regardless of affiliate relationships.
                     </p>
                 </div>

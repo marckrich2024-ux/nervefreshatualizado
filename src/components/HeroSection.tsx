@@ -71,7 +71,7 @@ const HeroSection = () => {
                     <div className="relative rounded-lg overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.08)] aspect-video md:aspect-[4/3]">
                         {/* Placeholder for generated image */}
                         <img
-                            src="/imagem-sessão-hero - Editado.jpg"
+                            src="/hero-optimized.webp"
                             alt="Health journalist workspace investigating Nerve Fresh"
                             className="w-full h-full object-cover"
                             onError={(e) => {

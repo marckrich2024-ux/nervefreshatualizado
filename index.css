@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply bg-base text-text-main antialiased;
+  }
+}
+
 :root {
   --color-base: #FAFAF7;
   --color-text-main: #2D3748;

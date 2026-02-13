@@ -51,6 +51,7 @@ const ExitModal = () => {
                 <button
                     onClick={handleClose}
                     className="absolute top-3 right-3 p-1 rounded-full bg-slate-100 hover:bg-slate-200 transition-colors text-slate-500"
+                    aria-label="Close modal"
                 >
                     <X className="w-5 h-5" />
                 </button>

@@ -10,7 +10,7 @@ const MechanismSection = () => {
             strength: 30,
             level: "Preliminary",
             color: "bg-red-100 text-red-800",
-            image: "/ingredients/prickly-pear.png",
+            image: "/ingredients/prickly-pear.webp",
             fallback: "https://images.unsplash.com/photo-1596547608622-c3227499696f?auto=format&fit=crop&w=400&q=80" // Cactus/Prickly Pear
         },
         {
@@ -20,7 +20,7 @@ const MechanismSection = () => {
             strength: 50,
             level: "Mixed Evidence",
             color: "bg-yellow-100 text-yellow-800",
-            image: "/ingredients/passionflower.png",
+            image: "/ingredients/passionflower.webp",
             fallback: "https://images.unsplash.com/photo-1543168256-418811576931?auto=format&fit=crop&w=400&q=80" // Passionflower
         },
         {
@@ -30,7 +30,7 @@ const MechanismSection = () => {
             strength: 40,
             level: "Preliminary",
             color: "bg-red-100 text-red-800",
-            image: "/ingredients/corydalis.png",
+            image: "/ingredients/corydalis.webp",
             fallback: "https://images.unsplash.com/photo-1598425237654-446755e167c1?auto=format&fit=crop&w=400&q=80" // Generic herb
         },
         {
@@ -40,7 +40,7 @@ const MechanismSection = () => {
             strength: 20,
             level: "Preliminary",
             color: "bg-red-100 text-red-800",
-            image: "/ingredients/marshmallow-root.png",
+            image: "/ingredients/marshmallow-root.webp",
             fallback: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=400&q=80" // Root/herbal tea
         },
         {
@@ -50,7 +50,7 @@ const MechanismSection = () => {
             strength: 60,
             level: "Moderate (for sleep)",
             color: "bg-green-100 text-green-800",
-            image: "/ingredients/california-poppy.png",
+            image: "/ingredients/california-poppy.webp",
             fallback: "https://images.unsplash.com/photo-1588610664687-57894d8cb9a6?auto=format&fit=crop&w=400&q=80" // Poppy
         }
     ];

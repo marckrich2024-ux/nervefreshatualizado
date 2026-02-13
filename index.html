@@ -134,58 +134,15 @@
   </script>
 
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind CSS (Migrated to Local Build) -->
+  <!-- <script src="https://cdn.tailwindcss.com"></script> REMOVED -->
 
-  <!-- Google Fonts: Inter, Roboto, and Montserrat -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-    rel="stylesheet">
+  <!-- Google Fonts (Migrated to Self-Hosted) -->
+  <!-- Fonts are now imported in src/index.tsx via @fontsource -->
 
   <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'], // Body font
-            serif: ['Merriweather', 'serif'], // Heading font
-            mono: ['JetBrains Mono', 'monospace'], // Data font
-          },
-          colors: {
-            base: '#FAFAF7',
-            text: {
-              main: '#2D3748',
-              muted: '#64748B',
-            },
-            accent: {
-              DEFAULT: '#0D9488',
-              hover: '#0F766E',
-            },
-            alert: '#E05A3A',
-            success: '#16A34A',
-            slate: {
-              soft: '#F1F5F9',
-              deep: '#2D3748',
-            },
-            brand: {
-              green: '#16A34A',
-              darkGreen: '#15803D',
-            }
-          },
-          animation: {
-            'fade-in': 'fadeIn 0.8s ease-out forwards',
-          },
-          keyframes: {
-            fadeIn: {
-              '0%': { opacity: '0', transform: 'translateY(10px)' },
-              '100%': { opacity: '1', transform: 'translateY(0)' },
-            }
-          }
-        }
-      }
-    }
+    // Tailwind Config moved to tailwind.config.js
+    // Local configuration ensures build-time optimization
   </script>
   <style>
     body {
@@ -206,109 +163,109 @@
   <div id="root"></div>
   <script type="module" src="/index.tsx"></script>
   <script>
-      (function () {
-        /**
-         * Sovereign Tracking System - v3 Universal Fail-Safe
-         * Critical Mission: Ensure GCLID/CLID reaches ClickBank checkout at all costs.
-         * 
-         * Layers of Protection:
-         * 1. Persistence: Saves params to LocalStorage immediately.
-         * 2. Visual: Aggressively updates hrefs every 500ms so users see the correct link.
-         * 3. Interceptor (The Nuclear Option): Listens to CLICKS globally. Even if React wipes the href
-         *    at the last millisecond, this interceptor catches the click, rebuilds the URL with params,
-         *    and forces the correct navigation.
-         */
-        const STORAGE_KEY = 'ads_tracking_data';
-        const TARGET_DOMAIN = 'secure.nervefresh.com';
-        const TRACKING_PARAMS = ['gclid', 'wbraid', 'gbraid', 'clid'];
+    (function () {
+      /**
+       * Sovereign Tracking System - v3 Universal Fail-Safe
+       * Critical Mission: Ensure GCLID/CLID reaches ClickBank checkout at all costs.
+       * 
+       * Layers of Protection:
+       * 1. Persistence: Saves params to LocalStorage immediately.
+       * 2. Visual: Aggressively updates hrefs every 500ms so users see the correct link.
+       * 3. Interceptor (The Nuclear Option): Listens to CLICKS globally. Even if React wipes the href
+       *    at the last millisecond, this interceptor catches the click, rebuilds the URL with params,
+       *    and forces the correct navigation.
+       */
+      const STORAGE_KEY = 'ads_tracking_data';
+      const TARGET_DOMAIN = 'secure.nervefresh.com';
+      const TRACKING_PARAMS = ['gclid', 'wbraid', 'gbraid', 'clid'];
 
-        // --- 1. Persistence Layer ---
-        function safeGetStorage() {
-          try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; } catch { return {}; }
-        }
+      // --- 1. Persistence Layer ---
+      function safeGetStorage() {
+        try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; } catch { return {}; }
+      }
 
-        function safeSetStorage(data) {
-          try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch (e) { console.warn('Storage warn', e); }
-        }
+      function safeSetStorage(data) {
+        try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch (e) { console.warn('Storage warn', e); }
+      }
 
-        function captureAndSave() {
-          const urlParams = new URLSearchParams(window.location.search);
-          let storage = safeGetStorage();
-          let updated = false;
+      function captureAndSave() {
+        const urlParams = new URLSearchParams(window.location.search);
+        let storage = safeGetStorage();
+        let updated = false;
 
-          TRACKING_PARAMS.forEach(param => {
-            const value = urlParams.get(param);
-            if (value) {
-              storage[param] = value;
-              updated = true;
-            }
-          });
-
-          if (updated) safeSetStorage(storage);
-        }
-
-        // --- 2. URL Builder Helper ---
-        function buildSecureUrl(originalHref, data) {
-          try {
-            const url = new URL(originalHref, window.location.origin);
-            Object.entries(data).forEach(([key, value]) => {
-              if (!url.searchParams.has(key)) {
-                url.searchParams.set(key, value);
-              }
-            });
-            return url.toString();
-          } catch (e) {
-            return originalHref;
+        TRACKING_PARAMS.forEach(param => {
+          const value = urlParams.get(param);
+          if (value) {
+            storage[param] = value;
+            updated = true;
           }
-        }
+        });
 
-        // --- 3. Visual Layer (The "Nice" Way) ---
-        function updateVisibleLinks() {
-          const data = safeGetStorage();
-          if (Object.keys(data).length === 0) return;
+        if (updated) safeSetStorage(storage);
+      }
 
-          document.querySelectorAll(`a[href*="${TARGET_DOMAIN}"]`).forEach(link => {
-            const newHref = buildSecureUrl(link.href, data);
-            if (link.href !== newHref) {
-              link.href = newHref;
-              link.setAttribute('data-tracked', 'true');
+      // --- 2. URL Builder Helper ---
+      function buildSecureUrl(originalHref, data) {
+        try {
+          const url = new URL(originalHref, window.location.origin);
+          Object.entries(data).forEach(([key, value]) => {
+            if (!url.searchParams.has(key)) {
+              url.searchParams.set(key, value);
             }
           });
+          return url.toString();
+        } catch (e) {
+          return originalHref;
         }
+      }
 
-        // --- 4. Interceptor Layer (The "Fail-Safe" Way) ---
-        function activateInterceptor() {
-          window.addEventListener('click', function (e) {
-            const target = e.target.closest('a');
-            if (!target) return;
+      // --- 3. Visual Layer (The "Nice" Way) ---
+      function updateVisibleLinks() {
+        const data = safeGetStorage();
+        if (Object.keys(data).length === 0) return;
 
-            const href = target.href;
-            if (!href || !href.includes(TARGET_DOMAIN)) return;
+        document.querySelectorAll(`a[href*="${TARGET_DOMAIN}"]`).forEach(link => {
+          const newHref = buildSecureUrl(link.href, data);
+          if (link.href !== newHref) {
+            link.href = newHref;
+            link.setAttribute('data-tracked', 'true');
+          }
+        });
+      }
 
-            const currentData = safeGetStorage();
-            if (Object.keys(currentData).length === 0) return;
+      // --- 4. Interceptor Layer (The "Fail-Safe" Way) ---
+      function activateInterceptor() {
+        window.addEventListener('click', function (e) {
+          const target = e.target.closest('a');
+          if (!target) return;
 
-            const finalUrl = buildSecureUrl(href, currentData);
+          const href = target.href;
+          if (!href || !href.includes(TARGET_DOMAIN)) return;
 
-            if (href !== finalUrl) {
-              e.preventDefault();
-              e.stopPropagation();
-              console.log('DOMÍNIO SOBERANO: Interceptação de clique! Redirecionando para:', finalUrl);
-              window.location.href = finalUrl;
-            } else {
-              console.log('DOMÍNIO SOBERANO: Link já estava seguro. Navegando normalmente.');
-            }
-          }, true);
-        }
+          const currentData = safeGetStorage();
+          if (Object.keys(currentData).length === 0) return;
 
-        captureAndSave();
-        setInterval(updateVisibleLinks, 1000);
-        updateVisibleLinks();
-        activateInterceptor();
+          const finalUrl = buildSecureUrl(href, currentData);
 
-        console.log('DOMÍNIO SOBERANO: Sistema de Rastreamento Blindado v3 ATIVADO.');
+          if (href !== finalUrl) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('DOMÍNIO SOBERANO: Interceptação de clique! Redirecionando para:', finalUrl);
+            window.location.href = finalUrl;
+          } else {
+            console.log('DOMÍNIO SOBERANO: Link já estava seguro. Navegando normalmente.');
+          }
+        }, true);
+      }
 
-      })();
+      captureAndSave();
+      setInterval(updateVisibleLinks, 1000);
+      updateVisibleLinks();
+      activateInterceptor();
+
+      console.log('DOMÍNIO SOBERANO: Sistema de Rastreamento Blindado v3 ATIVADO.');
+
+    })();
   </script>
 </body>
 
