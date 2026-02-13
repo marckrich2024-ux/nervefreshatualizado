@@ -23,44 +23,121 @@ const Home = () => {
         trackEvent('page_view_lp', { page_name: 'nerve_fresh_review', lang: 'en-US', type: 'editorial' });
     }, []);
 
-    const consolidatedFaqs = [
-        {
-            question: "Does Nerve Fresh actually work?",
-            answer: "Yes. Our analysis of 23 clinical studies confirms that ingredients like Corydalis and Prickly Pear have measurable effects on nerve pain and regeneration. Users typically see results within 45 days."
-        },
-        {
-            question: "Is Nerve Fresh a scam?",
-            answer: "No. It is a legitimate product manufactured in an FDA-registered, GMP-certified facility in the USA. It has a transparent label and a valid 180-day money-back guarantee."
-        },
-        {
-            question: "What are the side effects?",
-            answer: "The most common side effect is drowsiness due to the sedative properties of California Poppy and Passionflower. It is recommended to take it before bed."
-        },
-        {
-            question: "Why can't I find this on Amazon or at Walmart?",
-            answer: "Nerve Fresh plays hardball with retailers. To maintain quality control and prevent counterfeits (a major issue with popular supplements), they only sell direct-to-consumer."
-        },
-        {
-            question: "How should I take it?",
-            answer: "The official recommendation is 2 capsules daily with water, preferably 20-30 minutes before bed to utilize its sleep-enhancing benefits."
-        },
-        {
-            question: "How long until I feel relief?",
-            answer: "This isn't a painkiller that works in 20 minutes. It's a nutritional support formula. Based on the ingredient profiles, most users report noticeable changes in sensation after 4-6 weeks of consistent use."
-        },
-        {
-            question: "Do I need a prescription?",
-            answer: "No. Nerve Fresh is a nutritional supplement containing only plant-based ingredients (like Prickly Pear and Passionflower) and does not require a doctor's prescription."
-        },
-        {
-            question: "What if it doesn't work for me?",
-            answer: "This is the Safety Net. Nerve Fresh offers a 180-day money-back guarantee. We verified this policy: you can return even empty bottles for a refund. It's a no-questions-asked policy."
-        }
-    ];
+    const unifiedSchema = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Product",
+                "name": "Nerve Fresh",
+                "image": "https://www.the-health-journal.com/product.jpg",
+                "description": "Nerve Fresh is a natural dietary supplement designed to support healthy nerve function and relieve neuropathy symptoms.",
+                "brand": {
+                    "@type": "Brand",
+                    "name": "Nerve Fresh"
+                },
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "6.5",
+                    "bestRating": "10",
+                    "reviewCount": "1245"
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "url": "https://secure.nervefresh.com/index-is?&shield=4738aggfr4rkiymitn38phqims",
+                    "priceCurrency": "USD",
+                    "price": "49.00",
+                    "priceValidUntil": "2026-12-31",
+                    "availability": "https://schema.org/InStock",
+                    "hasMerchantReturnPolicy": {
+                        "@type": "MerchantReturnPolicy",
+                        "applicableCountry": "US",
+                        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnPeriod",
+                        "merchantReturnDays": 180,
+                        "returnFees": "https://schema.org/FreeReturn"
+                    },
+                    "shippingDetails": {
+                        "@type": "OfferShippingDetails",
+                        "shippingDestination": {
+                            "@type": "DefinedRegion",
+                            "addressCountry": "US"
+                        },
+                        "deliveryTime": {
+                            "@type": "ShippingDeliveryTime",
+                            "handlingTime": {
+                                "@type": "QuantitativeValue",
+                                "minValue": 0,
+                                "maxValue": 1,
+                                "unitCode": "DAY"
+                            },
+                            "transitTime": {
+                                "@type": "QuantitativeValue",
+                                "minValue": 5,
+                                "maxValue": 8,
+                                "unitCode": "DAY"
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Does Nerve Fresh actually work?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. Our analysis confirms that ingredients like Corydalis and Prickly Pear have measurable effects on nerve health. Most users report results within 45 to 90 days."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Is Nerve Fresh a scam?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "No. It is a legitimate supplement manufactured in FDA-registered facilities. It includes a transparent label and a 180-day money-back guarantee."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What are the side effects?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "The primary reported side effect is mild drowsiness due to its sedative botanical extracts. It is recommended for evening use."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Why can't I find it on Amazon?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Nerve Fresh is sold exclusively direct-to-consumer to prevent counterfeit products and ensure strict quality control."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How should I take it?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Take 2 capsules daily with water, preferably 20-30 minutes before bed to maximize the nerve repair cycle during sleep."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How does the guarantee work?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "You are protected by a 180-day risk-free trial. If not satisfied, contact support for a full refund of your purchase price."
+                        }
+                    }
+                ]
+            }
+        ]
+    };
 
     return (
         <>
-            <SEOHead faqs={consolidatedFaqs} />
+            <SEOHead schema={unifiedSchema} />
             <HeroSection />
             <TrustBar />
             <MechanismSection />
@@ -72,42 +149,7 @@ const Home = () => {
             <CostComparison />
             <FAQSection />
             <FinalVerdict />
-            <ProductSchema />
         </>
-    );
-};
-
-const ProductSchema = () => {
-    const schemaData = {
-        "@context": "https://schema.org",
-        "@type": "Product",
-        "name": "Nerve Fresh",
-        "description": "Natural nerve support supplement with Prickly Pear and Corydalis Yanhusuo.",
-        "image": "https://www.the-health-journal.com/product.jpg",
-        "brand": {
-            "@type": "Brand",
-            "name": "Nerve Fresh"
-        },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "6.5",
-            "bestRating": "10",
-            "reviewCount": "1240"
-        },
-        "offers": {
-            "@type": "Offer",
-            "url": "https://secure.nervefresh.com/index-is?&shield=4738aggfr4rkiymitn38phqims",
-            "priceCurrency": "USD",
-            "price": "49.00",
-            "availability": "https://schema.org/InStock"
-        }
-    };
-
-    return (
-        <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
-        />
     );
 };
 

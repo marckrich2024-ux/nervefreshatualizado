@@ -9,6 +9,7 @@ interface SEOHeadProps {
     type?: 'website' | 'article';
     image?: string;
     faqs?: Array<{ question: string; answer: string }>;
+    schema?: Record<string, any>;
 }
 
 const SEOHead: React.FC<SEOHeadProps> = ({
@@ -17,7 +18,8 @@ const SEOHead: React.FC<SEOHeadProps> = ({
     canonicalUrl = window.location.href,
     type = 'website',
     image = "https://www.the-health-journal.com/product.jpg",
-    faqs
+    faqs,
+    schema
 }) => {
     return (
         <Helmet>
@@ -40,8 +42,15 @@ const SEOHead: React.FC<SEOHeadProps> = ({
             <meta property="twitter:description" content={description} />
             <meta property="twitter:image" content={image} />
 
-            {/* FAQ Schema */}
-            {faqs && faqs.length > 0 && (
+            {/* Custom Schema */}
+            {schema && (
+                <script type="application/ld+json">
+                    {JSON.stringify(schema)}
+                </script>
+            )}
+
+            {/* FAQ Schema (fallback if no custom schema or compatible) */}
+            {!schema && faqs && faqs.length > 0 && (
                 <script type="application/ld+json">
                     {JSON.stringify({
                         "@context": "https://schema.org",
