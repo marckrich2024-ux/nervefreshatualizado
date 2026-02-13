@@ -15,3 +15,7 @@ body {
   background-color: var(--color-base);
   color: var(--color-text-main);
 }
+
+html {
+  scroll-behavior: smooth;
+}

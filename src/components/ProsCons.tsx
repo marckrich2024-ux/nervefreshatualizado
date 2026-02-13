@@ -6,7 +6,7 @@ const OFFER_URL = "https://secure.nervefresh.com/index-is?&shield=4738aggfr4rkiy
 
 const ProsCons = () => {
     return (
-        <section className="bg-base py-20 px-4">
+        <section id="pros-cons" className="bg-base py-20 px-4 scroll-mt-24">
             <div className="max-w-[1140px] mx-auto">
                 <h2 className="font-serif font-semibold text-3xl text-text-main mb-12 text-center">
                     The Balanced Verdict: Pros & Cons

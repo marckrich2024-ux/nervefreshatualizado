@@ -51,7 +51,7 @@ const EvidenceTable = () => {
     ];
 
     return (
-        <section className="bg-base py-20 px-4">
+        <section id="ingredients-evidence" className="bg-base py-20 px-4 scroll-mt-24">
             <div className="max-w-[960px] mx-auto">
                 <h2 className="font-serif font-semibold text-3xl text-text-main mb-6 text-center md:text-left">
                     Ingredient Claims vs. Scientific Evidence
