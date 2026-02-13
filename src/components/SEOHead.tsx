@@ -8,6 +8,7 @@ interface SEOHeadProps {
     canonicalUrl?: string;
     type?: 'website' | 'article';
     image?: string;
+    faqs?: Array<{ question: string; answer: string }>;
 }
 
 const SEOHead: React.FC<SEOHeadProps> = ({
@@ -15,7 +16,8 @@ const SEOHead: React.FC<SEOHeadProps> = ({
     description = "Read my honest Nerve Fresh review before you buy. I tested this neuropathy support formula for 90 days. Here are my results.",
     canonicalUrl = window.location.href,
     type = 'website',
-    image = "https://www.the-health-journal.com/product.jpg"
+    image = "https://www.the-health-journal.com/product.jpg",
+    faqs
 }) => {
     return (
         <Helmet>
@@ -37,6 +39,24 @@ const SEOHead: React.FC<SEOHeadProps> = ({
             <meta property="twitter:title" content={title} />
             <meta property="twitter:description" content={description} />
             <meta property="twitter:image" content={image} />
+
+            {/* FAQ Schema */}
+            {faqs && faqs.length > 0 && (
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "FAQPage",
+                        "mainEntity": faqs.map(faq => ({
+                            "@type": "Question",
+                            "name": faq.question,
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": faq.answer
+                            }
+                        }))
+                    })}
+                </script>
+            )}
         </Helmet>
     );
 };
