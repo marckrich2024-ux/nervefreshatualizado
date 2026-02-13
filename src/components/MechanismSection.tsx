@@ -56,7 +56,7 @@ const MechanismSection = () => {
     ];
 
     return (
-        <section className="bg-base py-12 md:py-16 px-4">
+        <section id="benefits" className="bg-base py-12 md:py-16 px-4 scroll-mt-24">
             <div className="max-w-[780px] mx-auto">
                 {/* Section Header */}
                 <div className="text-center mb-12">

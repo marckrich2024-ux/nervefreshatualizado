@@ -59,7 +59,7 @@ const BlogPost = () => {
         "author": [{
             "@type": "Person",
             "name": post.author,
-            "url": post.author.includes('Mikel') ? "https://www.the-health-journal.com/about-mikel" : "https://www.the-health-journal.com/about-sarah"
+            "url": "https://www.the-health-journal.com/about/dr-sarah-mitchell"
         }],
         "publisher": {
             "@type": "Organization",
@@ -139,7 +139,7 @@ const BlogPost = () => {
                         <span className="flex items-center">
                             <Calendar className="w-4 h-4 mr-2 text-gray-400" /> {post.date}
                         </span>
-                        <Link to={post.author.includes('Mikel') ? "/about-mikel" : "/about-sarah"} className="flex items-center hover:text-brand-green transition-colors">
+                        <Link to="/about/dr-sarah-mitchell" className="flex items-center hover:text-brand-green transition-colors">
                             <User className="w-4 h-4 mr-2 text-gray-400" />
                             <span className="underline decoration-dotted underline-offset-4">{post.author}</span>
                         </Link>
@@ -192,7 +192,7 @@ const BlogPost = () => {
                                 <p className="text-sm text-gray-600 mb-4">
                                     Medical Reviewer & Senior Health Editor at Health Journal Daily. Specialized in neurology and integrative medicine.
                                 </p>
-                                <Link to={post.author.includes('Mikel') ? "/about-mikel" : "/about-sarah"} className="text-sm font-bold text-gray-900 underline hover:text-brand-green">
+                                <Link to="/about/dr-sarah-mitchell" className="text-sm font-bold text-gray-900 underline hover:text-brand-green">
                                     View Full Bio & Credentials &rarr;
                                 </Link>
                             </div>

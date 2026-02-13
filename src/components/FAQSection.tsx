@@ -28,7 +28,7 @@ const FAQSection = () => {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
 
     return (
-        <section className="bg-white py-20 px-4">
+        <section id="faq" className="bg-white py-20 px-4 scroll-mt-24">
             <div className="max-w-[780px] mx-auto">
                 <div className="flex items-center gap-3 justify-center mb-8">
                     <HelpCircle className="w-8 h-8 text-accent" />

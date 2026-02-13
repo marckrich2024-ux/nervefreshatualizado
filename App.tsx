@@ -8,7 +8,6 @@ import Disclaimer from './src/pages/Disclaimer';
 import ContactUs from './src/pages/ContactUs';
 import About from './src/pages/About';
 import AboutSarah from './src/pages/AboutSarah';
-import AboutMikel from './src/pages/AboutMikel';
 import Blog from './src/pages/Blog';
 import BlogPost from './src/pages/BlogPost';
 
@@ -28,7 +27,6 @@ const App = () => {
           <Route path="contact" element={<ContactUs />} />
           <Route path="about" element={<About />} />
           <Route path="about/dr-sarah-mitchell" element={<AboutSarah />} />
-          <Route path="about/dr-mikel-daniels" element={<AboutMikel />} />
           <Route path="blog" element={<Blog />} />
           <Route path="blog/:slug" element={<BlogPost />} />
           {/* Catch all redirect to Home */}
