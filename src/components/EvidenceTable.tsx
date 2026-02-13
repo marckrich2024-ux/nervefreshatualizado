@@ -15,7 +15,7 @@ const EvidenceTable = () => {
         {
             ingredient: "Passionflower",
             claim: "The nerve architect that rebuilds neural pathways",
-            research: "Evidência moderada para ansiedade (meta-análise 2020). Nenhum estudo sobre 'reconstrução neural'.",
+            research: "Moderate evidence for anxiety (2020 meta-analysis). No specific studies on 'neural rebuilding'.",
             level: "Moderate (Anxiety)",
             levelColor: "bg-yellow-50 text-yellow-700",
             source: "PubMed",
@@ -24,7 +24,7 @@ const EvidenceTable = () => {
         {
             ingredient: "Corydalis",
             claim: "Intercepts pain signals before they reach the brain",
-            research: "Contém DHCB, estudado para dor em modelos animais. Poucos estudos em humanos.",
+            research: "Contains DHCB, studied for pain in animal models. Few human clinical trials available.",
             level: "Preliminary",
             levelColor: "bg-red-50 text-red-700",
             source: "NIH",
@@ -33,7 +33,7 @@ const EvidenceTable = () => {
         {
             ingredient: "Marshmallow Root",
             claim: "A natural guardian for inflamed nerve tissue",
-            research: "Propriedades anti-inflamatórias demonstradas in vitro. Sem estudos clínicos para neuropatia.",
+            research: "Anti-inflammatory properties demonstrated in vitro. No clinical studies for neuropathy.",
             level: "Preliminary",
             levelColor: "bg-red-50 text-red-700",
             source: "PubMed",
@@ -42,7 +42,7 @@ const EvidenceTable = () => {
         {
             ingredient: "California Poppy",
             claim: "The ultimate rest-inducer for nerve recovery",
-            research: "Uso tradicional para insônia. Classificado como 'possibly effective' pela EMA.",
+            research: "Traditional use for insomnia. Classified as 'possibly effective' by EMA.",
             level: "Moderate (Sleep)",
             levelColor: "bg-green-50 text-green-700",
             source: "EMA",
