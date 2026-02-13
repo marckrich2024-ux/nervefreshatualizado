@@ -161,7 +161,7 @@ const DeepDive = () => {
                 </div>
 
                 {/* Section 4: Testing Protocol */}
-                <div id="story" className="bg-brand-green/5 rounded-2xl p-8 border border-brand-green/20 scroll-mt-24">
+                <div id="our-process" className="bg-brand-green/5 rounded-2xl p-8 border border-brand-green/20 scroll-mt-24">
                     <div className="flex items-center gap-3 mb-6">
                         <div className="p-2 bg-white rounded-lg border border-brand-green/20">
                             <ShieldCheck className="w-6 h-6 text-brand-green" />

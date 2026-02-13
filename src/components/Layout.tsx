@@ -57,7 +57,7 @@ const Header = () => {
                     {/* Desktop Nav */}
                     <nav className="hidden md:flex items-center space-x-8">
                         <a href="/#benefits" onClick={() => handleLinkClick('benefits')} className="font-medium text-gray-600 hover:text-brand-green uppercase text-sm tracking-wide">Benefits</a>
-                        <a href="/#story" onClick={() => handleLinkClick('story')} className="font-medium text-gray-600 hover:text-brand-green uppercase text-sm tracking-wide">My Story</a>
+                        <a href="/#our-process" onClick={() => handleLinkClick('our-process')} className="font-medium text-gray-600 hover:text-brand-green uppercase text-sm tracking-wide">Our Process</a>
                         <a href="/#faq" onClick={() => handleLinkClick('faq')} className="font-medium text-gray-600 hover:text-brand-green uppercase text-sm tracking-wide">FAQ</a>
                     </nav>
 
@@ -68,7 +68,7 @@ const Header = () => {
                             onClick={() => trackEvent('cta_click', { cta_id: 'btn-nav-check' })}
                             className="bg-brand-green hover:bg-brand-darkGreen text-white font-bold py-2 px-6 rounded-lg text-sm transition-colors shadow-md uppercase flex items-center animate-pulse hover:animate-none"
                         >
-                            Check Official Availability <ExternalLink className="w-4 h-4 ml-2 opacity-80" />
+                            Check Availability & Pricing <ExternalLink className="w-4 h-4 ml-2 opacity-80" />
                         </a>
                     </div>
 
@@ -85,7 +85,7 @@ const Header = () => {
                 {isOpen && (
                     <div className="md:hidden bg-white border-b border-gray-200 absolute w-full left-0 top-16 shadow-xl py-4 flex flex-col items-center space-y-4 animate-in slide-in-from-top-2">
                         <a href="/#benefits" onClick={() => handleLinkClick('benefits')} className="font-medium text-gray-800 py-2">Benefits</a>
-                        <a href="/#story" onClick={() => handleLinkClick('story')} className="font-medium text-gray-800 py-2">My Story</a>
+                        <a href="/#our-process" onClick={() => handleLinkClick('our-process')} className="font-medium text-gray-800 py-2">Our Process</a>
                         <a href="/#faq" onClick={() => handleLinkClick('faq')} className="font-medium text-gray-800 py-2">FAQ</a>
                         <a
                             href={OFFER_URL}
@@ -93,7 +93,7 @@ const Header = () => {
                             onClick={() => trackEvent('cta_click', { cta_id: 'btn-header-mobile' })}
                             className="bg-brand-green text-white font-bold py-3 px-8 rounded-lg w-[90%] text-center shadow-lg uppercase"
                         >
-                            Check Official Availability
+                            Check Availability & Pricing
                         </a>
                     </div>
                 )}
