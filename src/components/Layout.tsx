@@ -65,7 +65,9 @@ const Header = () => {
                         <a
                             href={OFFER_URL}
                             id="btn-nav-check"
-                            onClick={() => trackEvent('cta_click', { cta_id: 'btn-nav-check' })}
+                            target="_blank"
+                            rel="sponsored nofollow noopener noreferrer"
+                            onClick={() => { trackEvent('cta_click_header'); trackEvent('affiliate_click'); }}
                             className="bg-brand-green hover:bg-brand-darkGreen text-white font-bold py-2 px-6 rounded-lg text-sm transition-colors shadow-md uppercase flex items-center animate-pulse hover:animate-none"
                         >
                             Check Availability & Pricing <ExternalLink className="w-4 h-4 ml-2 opacity-80" />
@@ -91,7 +93,9 @@ const Header = () => {
                         <a
                             href={OFFER_URL}
                             id="btn-header-mobile"
-                            onClick={() => trackEvent('cta_click', { cta_id: 'btn-header-mobile' })}
+                            target="_blank"
+                            rel="sponsored nofollow noopener noreferrer"
+                            onClick={() => { trackEvent('cta_click_header'); trackEvent('affiliate_click'); }}
                             className="bg-brand-green text-white font-bold py-3 px-8 rounded-lg w-[90%] text-center shadow-lg uppercase"
                             aria-label="Check availability and pricing"
                         >
@@ -179,7 +183,9 @@ const StickerCTA = () => {
                 <a
                     href={OFFER_URL}
                     id="btn-sticky-mobile"
-                    onClick={() => trackEvent('cta_click', { cta_id: 'btn-sticky-mobile' })}
+                    target="_blank"
+                    rel="sponsored nofollow noopener noreferrer"
+                    onClick={() => { trackEvent('cta_click_sticky'); trackEvent('affiliate_click'); }}
                     className="flex-1 bg-brand-green text-white font-bold py-3 rounded-lg text-center uppercase text-sm shadow-md"
                     aria-label="View official details and check stock"
                 >

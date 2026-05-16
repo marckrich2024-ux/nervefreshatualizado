@@ -39,7 +39,9 @@ const FinalVerdict = () => {
                     <a
                         href={OFFER_URL}
                         id="btn-final-check"
-                        onClick={() => trackEvent('cta_click', { cta_id: 'btn-final-check' })}
+                        target="_blank"
+                        rel="sponsored nofollow noopener noreferrer"
+                        onClick={() => { trackEvent('cta_click_final'); trackEvent('affiliate_click'); }}
                         className="w-full sm:w-auto bg-alert hover:bg-alert-hover text-white font-sans font-bold text-[18px] py-5 px-10 rounded-lg shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-1 uppercase tracking-wider flex items-center justify-center gap-2"
                     >
                         Check Current Pricing & Availability <ArrowRight className="w-5 h-5" />

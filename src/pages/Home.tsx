@@ -35,12 +35,6 @@ const Home = () => {
                     "@type": "Brand",
                     "name": "Nerve Fresh"
                 },
-                "aggregateRating": {
-                    "@type": "AggregateRating",
-                    "ratingValue": "6.5",
-                    "bestRating": "10",
-                    "reviewCount": "1245"
-                },
                 "offers": {
                     "@type": "Offer",
                     "url": "https://secure.nervefresh.com/index-is?&shield=4738aggfr4rkiymitn38phqims",

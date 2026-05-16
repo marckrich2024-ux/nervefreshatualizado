@@ -67,7 +67,9 @@ const ProsCons = () => {
                     <a
                         href={OFFER_URL}
                         id="btn-pros-check"
-                        onClick={() => trackEvent('cta_click', { cta_id: 'btn-pros-check' })}
+                        target="_blank"
+                        rel="sponsored nofollow noopener noreferrer"
+                        onClick={() => { trackEvent('cta_click_mid'); trackEvent('affiliate_click'); }}
                         className="inline-flex items-center justify-center bg-accent hover:bg-accent-hover text-white font-sans font-semibold text-[16px] py-4 px-10 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 uppercase tracking-wide group"
                     >
                         Check Current Availability & Pricing

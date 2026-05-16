@@ -1,4 +1,8 @@
 import React from 'react';
+import { trackEvent } from '../utils/analytics';
+import { ArrowRight } from 'lucide-react';
+
+const OFFER_URL = "https://secure.nervefresh.com/index-is?&shield=4738aggfr4rkiymitn38phqims";
 
 const HeroSection = () => {
     return (
@@ -10,17 +14,17 @@ const HeroSection = () => {
                     <div className="inline-flex items-center gap-3 border border-slate-200 bg-white rounded-full pr-4 pl-1 py-1 mb-4 shadow-sm">
                         <div className="w-8 h-8 rounded-full bg-slate-200 overflow-hidden shrink-0">
                             <img
-                                src="/assets/reviewer-avatar.webp"
-                                alt="Dr. Sarah Mitchell"
+                                src="/assets/editorial-avatar.webp"
+                                alt="Health Journal Editorial Team"
                                 className="w-full h-full object-cover"
                                 onError={(e) => {
-                                    (e.target as HTMLImageElement).src = 'https://ui-avatars.com/api/?name=Sarah+Mitchell&background=0D9488&color=fff';
+                                    (e.target as HTMLImageElement).src = 'https://ui-avatars.com/api/?name=HJ&background=0D9488&color=fff';
                                 }}
                             />
                         </div>
                         <div className="flex flex-col">
-                            <span className="font-sans font-bold text-[11px] text-text-main leading-tight">Reviewed by Dr. Sarah Mitchell</span>
-                            <span className="font-sans text-[10px] text-slate-500 leading-tight">Health Research Analyst • Feb 2026</span>
+                            <span className="font-sans font-bold text-[11px] text-text-main leading-tight">Reviewed by Health Journal Editorial Team</span>
+                            <span className="font-sans text-[10px] text-slate-500 leading-tight">Independent Editorial Review • Feb 2026</span>
                         </div>
                         <div className="w-4 h-4 bg-green-100 rounded-full flex items-center justify-center">
                             <svg className="w-2.5 h-2.5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -36,7 +40,7 @@ const HeroSection = () => {
 
                     {/* Headline */}
                     <h1 className="font-serif font-bold text-3xl md:text-[32px] lg:text-[42px] text-text-main leading-tight mb-4">
-                        We Investigated Nerve Fresh So You Don't Have To — Here’s What 23 Studies and 200+ User Reports Actually Show.
+                        Nerve Fresh Review (2026): What 23 Studies and 200+ User Reports Actually Show
                     </h1>
 
                     {/* Micro-copy (Empathy) */}
@@ -63,6 +67,21 @@ const HeroSection = () => {
                                 Based on ingredient research, user reports, and compliance review
                             </span>
                         </div>
+                    </div>
+
+                    {/* Primary CTA */}
+                    <div className="mt-8">
+                        <a
+                            href={OFFER_URL}
+                            id="btn-hero-check"
+                            target="_blank"
+                            rel="sponsored nofollow noopener noreferrer"
+                            onClick={() => { trackEvent('cta_click_hero'); trackEvent('affiliate_click'); }}
+                            className="inline-flex items-center justify-center bg-brand-green hover:bg-brand-darkGreen text-white font-bold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all uppercase tracking-wide group"
+                        >
+                            Check Current Manufacturer Pricing
+                            <ArrowRight className="w-5 h-5 ml-2 opacity-80 group-hover:translate-x-1 transition-transform" />
+                        </a>
                     </div>
                 </div>
 

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Plus, Minus, HelpCircle } from 'lucide-react';
+import { trackEvent } from '../utils/analytics';
 
 const FAQSection = () => {
     const faqs = [
@@ -41,7 +42,13 @@ const FAQSection = () => {
                     {faqs.map((faq, index) => (
                         <div key={index} className="border border-slate-200 rounded-lg overflow-hidden">
                             <button
-                                onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                                onClick={() => {
+                                    const isOpening = openIndex !== index;
+                                    setOpenIndex(isOpening ? index : null);
+                                    if (isOpening) {
+                                        trackEvent('faq_open', { question: faq.question });
+                                    }
+                                }}
                                 className="w-full flex items-center justify-between p-5 bg-slate-50 hover:bg-slate-100 transition-colors text-left"
                             >
                                 <span className="font-sans font-semibold text-[16px] text-text-main pr-8">{faq.question}</span>
