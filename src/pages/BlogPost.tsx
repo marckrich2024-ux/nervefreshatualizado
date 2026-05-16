@@ -57,9 +57,8 @@ const BlogPost = () => {
         "datePublished": new Date(post.date).toISOString(),
         "dateModified": new Date().toISOString(), // Assuming current build is modification
         "author": [{
-            "@type": "Person",
-            "name": post.author,
-            "url": "https://www.the-health-journal.com/about/dr-sarah-mitchell"
+            "@type": "Organization",
+            "name": post.author
         }],
         "publisher": {
             "@type": "Organization",
@@ -125,8 +124,8 @@ const BlogPost = () => {
             <div className="bg-white border-b border-gray-100 pt-10 pb-8">
                 <div className="max-w-3xl mx-auto px-4 text-center">
                     <div className="flex items-center justify-center gap-4 mb-6">
-                        <span className="bg-green-100 text-green-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-                            Clinically Reviewed
+                        <span className="bg-gray-100 text-gray-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                            Editorial Review
                         </span>
                         <span className="text-gray-400 text-sm">5 Min Read</span>
                     </div>
@@ -139,7 +138,7 @@ const BlogPost = () => {
                         <span className="flex items-center">
                             <Calendar className="w-4 h-4 mr-2 text-gray-400" /> {post.date}
                         </span>
-                        <Link to="/about/dr-sarah-mitchell" className="flex items-center hover:text-brand-green transition-colors">
+                        <Link to="/about" className="flex items-center hover:text-brand-green transition-colors">
                             <User className="w-4 h-4 mr-2 text-gray-400" />
                             <span className="underline decoration-dotted underline-offset-4">{post.author}</span>
                         </Link>
@@ -190,10 +189,10 @@ const BlogPost = () => {
                             <div className="flex-1">
                                 <p className="font-bold text-lg text-brand-green mb-1">{post.author}</p>
                                 <p className="text-sm text-gray-600 mb-4">
-                                    Medical Reviewer & Senior Health Editor at Health Journal Daily. Specialized in neurology and integrative medicine.
+                                    The Health Journal Daily Editorial Team consists of health researchers, writers, and editors dedicated to providing objective, evidence-based reviews of dietary supplements.
                                 </p>
-                                <Link to="/about/dr-sarah-mitchell" className="text-sm font-bold text-gray-900 underline hover:text-brand-green">
-                                    View Full Bio & Credentials &rarr;
+                                <Link to="/about" className="text-sm font-bold text-gray-900 underline hover:text-brand-green">
+                                    Read Our Editorial Guidelines &rarr;
                                 </Link>
                             </div>
                         </div>
@@ -210,6 +209,7 @@ const BlogPost = () => {
                         <div className="flex flex-col md:flex-row items-center justify-center gap-4">
                             <a
                                 href={OFFER_URL}
+                                target="_blank" rel="sponsored nofollow noopener noreferrer"
                                 className="bg-brand-green text-white font-bold py-4 px-8 rounded-lg hover:bg-brand-darkGreen transition-colors shadow-lg w-full md:w-auto flex items-center justify-center"
                             >
                                 Check Availability For {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })} <ExternalLink className="w-4 h-4 ml-2" />

@@ -91,7 +91,7 @@ const Home = () => {
                         "name": "Does Nerve Fresh really work?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Public discussions and ingredient research suggest it provides mild to moderate support for nerve health over time. It is not an overnight cure."
+                            "text": "Public discussions and ingredient research suggest it provides mild to moderate support for nerve health over time. It is not a rapid fix."
                         }
                     },
                     {

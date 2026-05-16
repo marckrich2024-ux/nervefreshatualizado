@@ -21,7 +21,7 @@ const QuickVerdict = () => {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
                         <div className="font-bold text-slate-700">Does it work?</div>
-                        <div className="md:col-span-2">Evidence suggests mild to moderate support for nerve health based on the botanical ingredients, but it is not an overnight cure or a replacement for medical treatment.</div>
+                        <div className="md:col-span-2">Evidence suggests mild to moderate support for nerve health based on the botanical ingredients, but it is not a rapid fix or a replacement for medical treatment.</div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
                         <div className="font-bold text-slate-700">Main concern</div>

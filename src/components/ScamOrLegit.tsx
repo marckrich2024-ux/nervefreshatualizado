@@ -61,7 +61,7 @@ const ScamOrLegit = () => {
                         <ul className="space-y-3">
                             <li className="flex items-start gap-2">
                                 <span className="w-1.5 h-1.5 bg-red-500 rounded-full mt-2 flex-shrink-0"></span>
-                                <span className="text-[15px] text-red-900 leading-snug">The existence of over 1,200+ verified 5-star public reviews for this specific brand.</span>
+                                <span className="text-[15px] text-red-900 leading-snug">Marketing claims regarding thousands of verified 5-star public reviews.</span>
                             </li>
                             <li className="flex items-start gap-2">
                                 <span className="w-1.5 h-1.5 bg-red-500 rounded-full mt-2 flex-shrink-0"></span>
@@ -69,11 +69,11 @@ const ScamOrLegit = () => {
                             </li>
                             <li className="flex items-start gap-2">
                                 <span className="w-1.5 h-1.5 bg-red-500 rounded-full mt-2 flex-shrink-0"></span>
-                                <span className="text-[15px] text-red-900 leading-snug">Strong marketing claims implying rapid "nerve repair" or cure.</span>
+                                <span className="text-[15px] text-red-900 leading-snug">Marketing claims implying rapid "nerve support" or cure.</span>
                             </li>
                             <li className="flex items-start gap-2">
                                 <span className="w-1.5 h-1.5 bg-red-500 rounded-full mt-2 flex-shrink-0"></span>
-                                <span className="text-[15px] text-red-900 leading-snug">Any internal 90-day human testing conducted by our editorial team.</span>
+                                <span className="text-[15px] text-red-900 leading-snug">Any internal human testing conducted by our editorial team.</span>
                             </li>
                         </ul>
                     </div>

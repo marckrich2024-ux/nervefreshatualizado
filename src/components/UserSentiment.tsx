@@ -64,7 +64,7 @@ const UserSentiment = () => {
                 {/* Honesty Footer */}
                 <div className="text-center mt-6">
                     <p className="font-sans text-[14px] text-slate-500 bg-white inline-block px-6 py-3 rounded-lg border border-slate-200 shadow-sm">
-                        While individual results vary, aggregate public sentiment indicates many users report symptomatic relief within a 90-day window, though a clear portion of users utilize the refund policy.
+                        While individual results vary, aggregate public sentiment indicates some users report symptomatic relief after several weeks of use, though a clear portion of users utilize the refund policy.
                     </p>
                 </div>
             </div>

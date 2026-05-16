@@ -6,23 +6,23 @@ const TrustBar = () => {
         <section className="bg-slate-soft py-4 border-y border-slate-200">
             <div className="max-w-[1140px] mx-auto px-4">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-                    {/* FDA */}
+                    {/* Editorial */}
                     <div className="flex items-center justify-center gap-2">
                         <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-800 font-bold text-xs border border-blue-200">
-                            FDA
+                            EDT
                         </div>
                         <span className="font-sans font-medium text-[12px] md:text-[13px] text-text-main leading-tight">
-                            FDA Registered<br />Facility
+                            Editorial<br />Independence
                         </span>
                     </div>
 
-                    {/* GMP */}
+                    {/* Evidence */}
                     <div className="flex items-center justify-center gap-2">
                         <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-800 font-bold text-xs border border-green-200">
-                            GMP
+                            <Search className="w-4 h-4" />
                         </div>
                         <span className="font-sans font-medium text-[12px] md:text-[13px] text-text-main leading-tight">
-                            GMP Certified<br />Manufacturing
+                            Evidence-Based<br />Review
                         </span>
                     </div>
 

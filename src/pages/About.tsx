@@ -14,7 +14,7 @@ const About = () => {
                         Our Mission
                     </h2>
                     <p className="text-gray-700 leading-relaxed text-lg">
-                        At <strong>Health Journal Daily</strong>, we believe that informed decisions are the foundation of a healthier life. In a digital landscape flooded with conflicting information and aggressive marketing, our mission is to stand as a beacon of clarity and independence. We are dedicated to researching, analyzing, and reviewing natural health solutions with rigor and transparency.
+                        At <strong>Health Journal Daily</strong>, we believe that informed decisions are the foundation of a healthier life. We are an independent, affiliate-supported editorial publication dedicated to researching and reviewing natural health solutions, dietary supplements, and wellness trends.
                     </p>
                 </section>
 
@@ -25,10 +25,10 @@ const About = () => {
                         Who We Are
                     </h2>
                     <p className="text-gray-700 leading-relaxed mb-4">
-                        We are a collective of independent health researchers, medical journalists, and wellness enthusiasts. Unlike retailer-owned blogs, we operate independently to ensure our reviews remain unbiased and focused solely on consumer value.
+                        We are a team of writers and wellness enthusiasts. We operate as an editorial review site, consolidating public information, ingredient research, and user feedback to provide clear summaries for our readers.
                     </p>
                     <p className="text-gray-700 leading-relaxed">
-                        Our team spends hundreds of hours analyzing clinical studies, verifying ingredient sourcing, and collecting real-world user feedback before we ever publish a review.
+                        Our goal is to present balanced perspectives, highlighting both the potential benefits and the limitations of the supplements we cover.
                     </p>
                 </section>
 

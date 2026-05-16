@@ -10,7 +10,7 @@ const FAQSection = () => {
         },
         {
             question: "Does Nerve Fresh really work?",
-            answer: "Public discussions and ingredient research suggest it provides mild to moderate support for nerve health over time. It works primarily through botanical extracts that target oxidative stress, but it is not an overnight cure."
+            answer: "Public discussions and ingredient research suggest it provides mild to moderate support for nerve health over time. It works primarily through botanical extracts that target oxidative stress, but it is not a rapid fix."
         },
         {
             question: "What are the side effects?",

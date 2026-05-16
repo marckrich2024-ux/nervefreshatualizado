@@ -110,7 +110,7 @@ const DeepDive = () => {
 
                     <div className="prose prose-lg prose-slate text-text-main leading-relaxed">
                         <p>
-                            Nerve Fresh is a specialized tool. It is not a "cure-all" for every type of pain. Based on the mechanism of action (enzymatic down-regulation and myelin repair), here is our clinical candidate profile.
+                            Nerve Fresh is a specialized dietary supplement. It is not a "fix-all" for every type of discomfort. Based on its botanical profile and antioxidant approach, here is an overview of who might consider it.
                         </p>
 
                         <div className="grid md:grid-cols-2 gap-8 my-8">

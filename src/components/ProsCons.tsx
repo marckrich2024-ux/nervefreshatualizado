@@ -23,8 +23,8 @@ const ProsCons = () => {
                             {[
                                 "180-day money-back guarantee — one of the longest in the industry",
                                 "All five ingredients have at least some published research behind them",
-                                "Manufactured in FDA-registered, GMP-certified facility",
-                                "No reported serious side effects in user discussions we found",
+
+                                "Generally well-tolerated by most users in public feedback",
                                 "Transparent ingredient list (though dosages are proprietary)"
                             ].map((item, i) => (
                                 <li key={i} className="flex items-start gap-3">

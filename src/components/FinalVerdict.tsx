@@ -14,7 +14,7 @@ const FinalVerdict = () => {
                     A Safe Experiment, But Keep Expectations Realistic
                 </h2>
                 <p className="font-sans text-[17px] text-text-muted leading-relaxed mb-8">
-                    Nerve Fresh isn't a miraculous cure for neuropathy. The science behind its ingredients suggests it may provide mild support for nerve health and oxidative stress, but strong clinical evidence for the specific formula is missing. However, given the 180-day money-back guarantee and lack of severe side effects, it is a low-risk option to try if you are seeking a natural complement to your current treatment plan.
+                    Nerve Fresh isn't a miraculous fix for neuropathy. The science behind its ingredients suggests it may provide mild support for nerve health and oxidative stress, but strong clinical evidence for the specific formula is missing. However, given the 180-day money-back guarantee and lack of severe side effects, it is a low-risk option to try if you are seeking a natural complement to your current treatment plan.
                 </p>
 
                 <div className="inline-block bg-slate-50 border border-slate-200 rounded-lg p-6 mb-10 text-left w-full max-w-[480px]">
