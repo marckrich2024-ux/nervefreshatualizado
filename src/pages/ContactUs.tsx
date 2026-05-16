@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Clock, MapPin, Send } from 'lucide-react';
+import SEOHead from '../components/SEOHead';
 
 const ContactUs = () => {
     const [formState, setFormState] = useState({ name: '', email: '', message: '' });
@@ -13,6 +14,10 @@ const ContactUs = () => {
 
     return (
         <div className="max-w-4xl mx-auto px-4 py-16">
+            <SEOHead 
+                title="Contact Us - Health Journal Daily" 
+                description="Get in touch with the Health Journal Daily team for inquiries or support regarding our editorial content." 
+            />
             <h1 className="font-heading text-3xl font-bold text-gray-900 mb-8 text-center">Contact Us</h1>
 
             <div className="grid md:grid-cols-2 gap-12">

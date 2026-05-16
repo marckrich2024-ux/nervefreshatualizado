@@ -158,7 +158,7 @@ export const blogPosts: BlogPost[] = [
     },
     {
         id: '4',
-        slug: '5-natural-ways-support-peripheral-nerve-health',
+        slug: '5-natural-ways-to-support-peripheral-nerve-health',
         title: '5 Natural Ways to Support Peripheral Nerve Health',
         excerpt: 'Explore five lifestyle adjustments, including diet and movement, that may help support healthy nerve function and overall well-being.',
         date: 'January 28, 2026',
@@ -194,7 +194,7 @@ export const blogPosts: BlogPost[] = [
     },
     {
         id: '5',
-        slug: 'nerve-fresh-ingredients-deep-dive',
+        slug: 'nerve-fresh-ingredients-overview',
         title: 'Nerve Fresh Ingredients Overview',
         excerpt: 'A look at the botanical ingredients inside Nerve Fresh and their traditional uses for relaxation and wellness.',
         date: 'January 20, 2026',

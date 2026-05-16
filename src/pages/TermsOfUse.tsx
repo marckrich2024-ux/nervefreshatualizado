@@ -1,8 +1,14 @@
 import React from 'react';
+import SEOHead from '../components/SEOHead';
 
 const TermsOfUse = () => {
     return (
         <div className="max-w-4xl mx-auto px-4 py-16">
+            <SEOHead 
+                title="Terms of Use - Health Journal Daily" 
+                description="Read our terms of use." 
+                noindex={true}
+            />
             <h1 className="font-heading text-3xl font-bold text-gray-900 mb-8">Terms of Use</h1>
             <p className="text-gray-600 mb-4">Last updated: {new Date().getFullYear()}</p>
 

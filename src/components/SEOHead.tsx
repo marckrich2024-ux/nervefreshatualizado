@@ -10,22 +10,25 @@ interface SEOHeadProps {
     image?: string;
     faqs?: Array<{ question: string; answer: string }>;
     schema?: Record<string, any>;
+    noindex?: boolean;
 }
 
 const SEOHead: React.FC<SEOHeadProps> = ({
     title = "Nerve Fresh Review: Scam, Side Effects, Ingredients & What We Found",
     description = "Independent editorial review of Nerve Fresh. We look at ingredients, side effects, public feedback, refund terms, and what claims could not be verified.",
-    canonicalUrl = window.location.href,
+    canonicalUrl = `${window.location.origin}${window.location.pathname}`,
     type = 'website',
     image = "https://www.the-health-journal.com/product.jpg",
     faqs,
-    schema
+    schema,
+    noindex = false
 }) => {
     return (
         <Helmet>
             {/* Primary Meta Tags */}
             <title>{title}</title>
             <meta name="description" content={description} />
+            {noindex ? <meta name="robots" content="noindex, nofollow" /> : <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />}
             <link rel="canonical" href={canonicalUrl} />
 
             {/* Open Graph / Facebook */}

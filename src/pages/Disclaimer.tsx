@@ -1,8 +1,14 @@
 import React from 'react';
+import SEOHead from '../components/SEOHead';
 
 const Disclaimer = () => {
     return (
         <div className="max-w-4xl mx-auto px-4 py-16">
+            <SEOHead 
+                title="Disclaimer - Health Journal Daily" 
+                description="Medical, FDA, and affiliate disclaimers for Health Journal Daily." 
+                noindex={true}
+            />
             <h1 className="font-heading text-3xl font-bold text-gray-900 mb-8">Full Disclaimer</h1>
             <p className="text-gray-600 mb-4">Last updated: {new Date().getFullYear()}</p>
 

@@ -1,9 +1,14 @@
 import React from 'react';
 import { ShieldCheck, Users, BookOpen } from 'lucide-react';
+import SEOHead from '../components/SEOHead';
 
 const About = () => {
     return (
         <div className="max-w-4xl mx-auto px-4 py-16">
+            <SEOHead 
+                title="About Us - Health Journal Daily" 
+                description="Learn about the editorial team behind Health Journal Daily and our commitment to transparent, independent supplement reviews." 
+            />
             <h1 className="font-heading text-4xl font-bold text-gray-900 mb-8 text-center border-b pb-8">About Health Journal Daily</h1>
 
             <div className="space-y-12">

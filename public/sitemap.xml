@@ -2,67 +2,56 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.the-health-journal.com/</loc>
-    <lastmod>2026-02-13</lastmod>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.the-health-journal.com/blog</loc>
-    <lastmod>2026-02-13</lastmod>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.the-health-journal.com/about</loc>
-    <lastmod>2026-02-13</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.the-health-journal.com/about/dr-sarah-mitchell</loc>
-    <lastmod>2026-02-13</lastmod>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.the-health-journal.com/contact</loc>
-    <lastmod>2026-02-13</lastmod>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.the-health-journal.com/privacy</loc>
-    <lastmod>2026-02-13</lastmod>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.the-health-journal.com/terms</loc>
-    <lastmod>2026-02-13</lastmod>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.the-health-journal.com/disclaimer</loc>
-    <lastmod>2026-02-13</lastmod>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://www.the-health-journal.com/blog/nerve-fresh-vs-nerve-control-911</loc>
-    <lastmod>2026-02-08</lastmod>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.the-health-journal.com/blog/science-behind-prickly-pear-nerve-health</loc>
-    <lastmod>2026-02-05</lastmod>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.the-health-journal.com/blog/nerve-fresh-customer-reviews-2026</loc>
-    <lastmod>2026-02-02</lastmod>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.the-health-journal.com/blog/5-natural-ways-support-peripheral-nerve-health</loc>
-    <lastmod>2026-01-28</lastmod>
+    <loc>https://www.the-health-journal.com/blog/5-natural-ways-to-support-peripheral-nerve-health</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.the-health-journal.com/blog/nerve-fresh-ingredients-deep-dive</loc>
-    <lastmod>2026-01-20</lastmod>
+    <loc>https://www.the-health-journal.com/blog/nerve-fresh-ingredients-overview</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 </urlset>
