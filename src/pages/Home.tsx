@@ -75,6 +75,7 @@ const Home = () => {
                     }
                 }
             },
+            {
                 "@type": "FAQPage",
                 "mainEntity": [
                     {
