@@ -13,13 +13,13 @@ const DeepDive = () => {
                             <BookOpen className="w-6 h-6 text-brand-green" />
                         </div>
                         <h2 className="font-serif font-bold text-3xl text-text-main">
-                            Does Nerve Fresh Actually Work? What 23 Studies Reveal
+                            Does Nerve Fresh Actually Work? The Ingredient Evidence
                         </h2>
                     </div>
 
                     <div className="prose prose-lg prose-slate text-text-main leading-relaxed">
                         <p>
-                            In our extensive 2026 audit, we didn't just look at the bottle; we looked at the biochemistry. To answer the question "Does Nerve Fresh work?", we successfully identified and analyzed <strong>23 peer-reviewed clinical papers</strong> covering the specific alkaloid profile found in this formula.
+                            To answer whether Nerve Fresh works, we looked past the marketing claims and analyzed the available peer-reviewed literature on its key ingredients. 
                         </p>
                         <p>
                             The short answer is yes, but not in the way you might expect. Most neuropathy supplements rely on "Mega-Dosing" B-Vitamins (B1, B6, B12). While B-Vitamin deficiency <em>is</em> a cause of neuropathy, it accounts for less than 15% of cases in modern adults. The vast majority of cases are metabolic or inflammatory.
@@ -60,21 +60,16 @@ const DeepDive = () => {
                             Every substance that has an effect can have a side effect. Our toxicology report on Nerve Fresh highlights safety, but there are specific nuances every consumer must know before buying.
                         </p>
 
-                        <h3 className="text-xl font-bold mt-6 mb-3 text-brand-darkGreen">1. The "Sedation" Factor</h3>
+                        <h3 className="text-xl font-bold mt-6 mb-3 text-brand-darkGreen">1. The "Sedation" Factor (Drowsiness)</h3>
                         <p>
-                            The most reported "side effect" is actually intended functionality: <strong>Drowsiness</strong>. The formula contains California Poppy and Passionflower, both of which are central nervous system depressants (sedatives).
+                            Some users may feel sleepy because the formula appears calming rather than stimulating. That may be useful at night, but it can be a drawback for people sensitive to sedating herbs or already using sleep medication.
                         </p>
-                        <div className="bg-blue-50 p-4 rounded-lg text-sm text-blue-800 my-4 flex items-start gap-3">
+                        <div className="bg-blue-50 p-4 rounded-lg text-sm text-blue-800 my-4 flex items-start gap-3 border border-blue-100">
                             <Activity className="w-5 h-5 flex-shrink-0 mt-0.5" />
                             <p>
-                                <strong>Advisory:</strong> Do NOT take Nerve Fresh in the morning if you plan to drive or operate heavy machinery. This supplement is strictly designed for evening use (2 capsules, 30 minutes before bed).
+                                <strong>Advisory:</strong> Because of herbs like Passionflower and California Poppy, it is generally recommended for evening use. Consult your doctor if you take prescription sedatives or sleep aids to avoid excessive drowsiness.
                             </p>
                         </div>
-
-                        <h3 className="text-xl font-bold mt-6 mb-3 text-brand-darkGreen">2. Interaction with GABAergic Drugs</h3>
-                        <p>
-                            Because Passionflower boosts GABA levels (the brain's relaxation chemical), it should be used with caution if you are already taking prescription benzodiazepines or sleep aids (like Ambien). The combined effect could lead to excessive sedation.
-                        </p>
 
                         <h3 className="text-xl font-bold mt-6 mb-3 text-brand-darkGreen">3. Blood Pressure Variance</h3>
                         <p>
@@ -160,35 +155,38 @@ const DeepDive = () => {
                     </div>
                 </div>
 
-                {/* Section 4: Testing Protocol */}
-                <div id="our-process" className="bg-brand-green/5 rounded-2xl p-8 border border-brand-green/20 scroll-mt-24">
+                {/* Section 4: Public Sources & Evidence */}
+                <div id="sources" className="bg-slate-50 rounded-2xl p-8 border border-slate-200 mt-20">
                     <div className="flex items-center gap-3 mb-6">
-                        <div className="p-2 bg-white rounded-lg border border-brand-green/20">
-                            <ShieldCheck className="w-6 h-6 text-brand-green" />
+                        <div className="p-2 bg-white rounded-lg border border-slate-200">
+                            <BookOpen className="w-6 h-6 text-slate-700" />
                         </div>
-                        <h2 className="font-serif font-bold text-3xl text-text-main">
-                            Our 90-Day Testing Protocol
+                        <h2 className="font-serif font-bold text-2xl text-text-main">
+                            Ingredient Evidence & Sources
                         </h2>
                     </div>
 
-                    <div className="prose prose-lg prose-slate text-text-main leading-relaxed">
+                    <div className="prose prose-md prose-slate text-text-main leading-relaxed">
                         <p>
-                            How do we know all this? At Health Journal Daily, we don't just read the marketing brochure. For our Nerve Fresh audit, we implemented a strict 3-Phase Verification Process:
+                            While there is no public clinical trial on the finished Nerve Fresh pill itself, the individual ingredients have been studied. Here is what the public data suggests:
                         </p>
-                        <ol className="list-decimal pl-5 space-y-4 my-6">
-                            <li>
-                                <strong>Phase 1: Chemical Analysis (Days 1-7):</strong> We cross-referenced the label claims with HPLC (High-Performance Liquid Chromatography) data from independent labs to verify that the "Prickly Pear" was actually <em>Opuntia ficus-indica</em> extract and not just cactus water.
-                            </li>
-                            <li>
-                                <strong>Phase 2: The Human Trial (Days 8-98):</strong> We successfully recruited Robert M., a 64-year-old retired contractor with confirmed peripheral neuropathy, to take the supplement daily and log his pain levels (1-10) every morning and evening. (See his full log in our <a href="/blog/nerve-fresh-customer-reviews-2026" className="text-brand-green font-bold underline">Customer Reviews</a> deep dive).
-                            </li>
-                            <li>
-                                <strong>Phase 3: Sentiment Auditing (Day 99+):</strong> We used natural language processing to scan over 1,200 reviews on third-party platforms, filtering out "bot" reviews to find the true satisfaction rate (88%).
-                            </li>
-                        </ol>
-                        <p className="text-sm text-gray-500 italic mt-4">
-                            *This review is living documentation. We continuously update our findings as new clinical data on Corydalis and Prickly Pear becomes available. Last update: February 2026.
-                        </p>
+                        <div className="space-y-4 mt-6">
+                            <div className="bg-white p-4 rounded-lg border border-slate-200 shadow-sm">
+                                <h4 className="font-bold text-brand-darkGreen m-0">Corydalis (DHCB)</h4>
+                                <p className="text-sm mt-2 mb-0"><strong>Type of Evidence:</strong> Animal Models / In-vitro</p>
+                                <p className="text-sm mt-1"><strong>What it suggests:</strong> DHCB has been shown to interact with pain receptors in mice without the same tolerance buildup as traditional opioids.</p>
+                                <p className="text-sm mt-1"><strong>What it DOES NOT prove:</strong> It does not guarantee human pain relief at the specific dosage found in this supplement.</p>
+                                <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3896593/" target="_blank" rel="noopener noreferrer" className="text-xs text-brand-green font-bold hover:underline">View Source (Current Biology, 2014)</a>
+                            </div>
+
+                            <div className="bg-white p-4 rounded-lg border border-slate-200 shadow-sm">
+                                <h4 className="font-bold text-brand-darkGreen m-0">Prickly Pear (Opuntia ficus-indica)</h4>
+                                <p className="text-sm mt-2 mb-0"><strong>Type of Evidence:</strong> Human & Animal Reviews</p>
+                                <p className="text-sm mt-1"><strong>What it suggests:</strong> Contains betalains which act as powerful antioxidants, potentially reducing oxidative stress associated with nerve inflammation.</p>
+                                <p className="text-sm mt-1"><strong>What it DOES NOT prove:</strong> It does not prove a reversal of existing nerve damage.</p>
+                                <a href="https://pubmed.ncbi.nlm.nih.gov/15814264/" target="_blank" rel="noopener noreferrer" className="text-xs text-brand-green font-bold hover:underline">View Source (Phytotherapy Research)</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 

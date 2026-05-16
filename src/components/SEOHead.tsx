@@ -13,8 +13,8 @@ interface SEOHeadProps {
 }
 
 const SEOHead: React.FC<SEOHeadProps> = ({
-    title = "Nerve Fresh Review (2026): Is It a Scam? My Honest Result",
-    description = "Read my honest Nerve Fresh review before you buy. I tested this neuropathy support formula for 90 days. Here are my results.",
+    title = "Nerve Fresh Review: Scam, Side Effects, Ingredients & What We Found",
+    description = "Independent editorial review of Nerve Fresh. We look at ingredients, side effects, public feedback, refund terms, and what claims could not be verified.",
     canonicalUrl = window.location.href,
     type = 'website',
     image = "https://www.the-health-journal.com/product.jpg",

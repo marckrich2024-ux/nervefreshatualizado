@@ -8,6 +8,8 @@ import { trackEvent } from '../utils/analytics';
 import SEOHead from '../components/SEOHead';
 import HeroSection from '../components/HeroSection';
 import TrustBar from '../components/TrustBar';
+import QuickVerdict from '../components/QuickVerdict';
+import ScamOrLegit from '../components/ScamOrLegit';
 import MechanismSection from '../components/MechanismSection';
 import MethodologySection from '../components/MethodologySection';
 import DeepDive from '../components/DeepDive';
@@ -73,23 +75,22 @@ const Home = () => {
                     }
                 }
             },
-            {
                 "@type": "FAQPage",
                 "mainEntity": [
-                    {
-                        "@type": "Question",
-                        "name": "Does Nerve Fresh actually work?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Yes. Our analysis confirms that ingredients like Corydalis and Prickly Pear have measurable effects on nerve health. Most users report results within 45 to 90 days."
-                        }
-                    },
                     {
                         "@type": "Question",
                         "name": "Is Nerve Fresh a scam?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "No. It is a legitimate supplement manufactured in FDA-registered facilities. It includes a transparent label and a 180-day money-back guarantee."
+                            "text": "No, we found no evidence of a financial scam. The product is shipped as promised, the checkout is secure, and the 180-day refund policy is generally honored."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Does Nerve Fresh really work?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Public discussions and ingredient research suggest it provides mild to moderate support for nerve health over time. It is not an overnight cure."
                         }
                     },
                     {
@@ -97,31 +98,39 @@ const Home = () => {
                         "name": "What are the side effects?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "The primary reported side effect is mild drowsiness due to its sedative botanical extracts. It is recommended for evening use."
+                            "text": "The most common side effect reported is drowsiness due to calming ingredients like Passionflower and California Poppy."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "Why can't I find it on Amazon?",
+                        "name": "Is Nerve Fresh safe with medications?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Nerve Fresh is sold exclusively direct-to-consumer to prevent counterfeit products and ensure strict quality control."
+                            "text": "If you take prescription sedatives, sleep aids, or blood pressure medication, you must consult your doctor before use."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "How should I take it?",
+                        "name": "Where should I buy Nerve Fresh?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Take 2 capsules daily with water, preferably 20-30 minutes before bed to maximize the nerve repair cycle during sleep."
+                            "text": "You should only purchase Nerve Fresh through the official website to ensure the money-back guarantee."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "How does the guarantee work?",
+                        "name": "Is there a refund policy?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "You are protected by a 180-day risk-free trial. If not satisfied, contact support for a full refund of your purchase price."
+                            "text": "Yes. The company offers a 180-day money-back guarantee, even on empty bottles."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Who should avoid Nerve Fresh?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Anyone with nerve pain caused by mechanical compression (like a pinched nerve), pregnant women, and nursing mothers."
                         }
                     }
                 ]
@@ -134,11 +143,12 @@ const Home = () => {
             <SEOHead schema={unifiedSchema} />
             <HeroSection />
             <TrustBar />
-            <MechanismSection />
-            <MethodologySection />
-            <DeepDive />
-            <EvidenceTable />
+            <QuickVerdict />
+            <ScamOrLegit />
             <UserSentiment />
+            <MethodologySection />
+            <MechanismSection />
+            <DeepDive />
             <ProsCons />
             <CostComparison />
             <FAQSection />

@@ -36,16 +36,14 @@ const TrustBar = () => {
                         </span>
                     </div>
 
-                    {/* Reviews */}
+                    {/* Editorial */}
                     <div className="flex items-center justify-center gap-2">
-                        <div className="flex flex-col items-center md:items-start">
-                            <div className="flex text-yellow-400">
-                                {[1, 2, 3, 4, 5].map(i => <Search key={i} className="w-3 h-3 fill-current" />).map((e, i) => <span key={i} className="text-yellow-500">★</span>)}
-                            </div>
-                            <span className="font-sans font-bold text-[12px] text-text-main">
-                                4.8/5 based on 1,200+ Reviews
-                            </span>
+                        <div className="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center text-slate-700 border border-slate-300">
+                            <Search className="w-4 h-4" />
                         </div>
+                        <span className="font-sans font-medium text-[11px] md:text-[12px] text-text-main leading-tight text-center md:text-left">
+                            Editorial review based on<br />ingredient evidence & safety
+                        </span>
                     </div>
                 </div>
             </div>

@@ -5,24 +5,32 @@ import { trackEvent } from '../utils/analytics';
 const FAQSection = () => {
     const faqs = [
         {
-            question: "Why can't I find this on Amazon or at Walmart?",
-            answer: "Nerve Fresh plays hardball with retailers. To maintain quality control and prevent counterfeits (a major issue with popular supplements), they only sell direct-to-consumer. This cuts out the middleman but means you can't just pick it up at the pharmacy."
+            question: "Is Nerve Fresh a scam?",
+            answer: "No, we found no evidence of a financial scam. The product is shipped as promised, the checkout is secure, and the 180-day refund policy is generally honored. However, like many supplements, its marketing claims may be stronger than the publicly available clinical evidence."
         },
         {
-            question: "Does this interfere with Gabapentin or Lyrica?",
-            answer: "We analyzed the interaction potential. Generally, herbal supplements like Passionflower and California Poppy have a mild sedative effect, which could theoretically amplify the drowsiness caused by Gabapentin. You should absolutely consult your doctor before combining them. Do not stop your prescription medication to take this instead."
+            question: "Does Nerve Fresh really work?",
+            answer: "Public discussions and ingredient research suggest it provides mild to moderate support for nerve health over time. It works primarily through botanical extracts that target oxidative stress, but it is not an overnight cure."
         },
         {
-            question: "How long until I feel relief?",
-            answer: "This isn't a painkiller that works in 20 minutes. It's a nutritional support formula. Based on the ingredient profiles, most users in similar studies report noticeable changes in sensation after 4-6 weeks of consistent use. If you expect overnight miracles, you will be disappointed."
+            question: "What are the side effects?",
+            answer: "The most common side effect reported is drowsiness due to calming ingredients like Passionflower and California Poppy. It is highly recommended to take this supplement in the evening."
         },
         {
-            question: "What if it doesn't work for me?",
-            answer: "This is the Safety Net. Nerve Fresh offers a 180-day money-back guarantee. We verified this policy: you can return even empty bottles for a refund. It's a no-questions-asked policy, which significantly lowers the risk of trying it."
+            question: "Is Nerve Fresh safe with medications?",
+            answer: "If you take prescription sedatives, sleep aids, or blood pressure medication, you must consult your doctor before use. The herbal ingredients can amplify the effects of these medications."
         },
         {
-            question: "Is this a subscription trap?",
-            answer: "No. The checkout page defaults to a one-time purchase. There is no hidden auto-ship unless you explicitly check a box requesting a subscription (if available). We always recommend double-checking your cart before confirming."
+            question: "Where should I buy Nerve Fresh?",
+            answer: "You should only purchase Nerve Fresh through the official website. Buying from Amazon, Walmart, or third-party sellers voids the 180-day money-back guarantee and increases the risk of receiving a counterfeit product."
+        },
+        {
+            question: "Is there a refund policy?",
+            answer: "Yes. The company offers a 180-day money-back guarantee. According to public feedback, this policy is legitimate and they accept returns of empty bottles."
+        },
+        {
+            question: "Who should avoid Nerve Fresh?",
+            answer: "Anyone with nerve pain caused by mechanical compression (like a pinched nerve or herniated disc) should avoid this, as a supplement cannot fix a physical impingement. Pregnant women, nursing mothers, and children should also avoid use."
         }
     ];
 
