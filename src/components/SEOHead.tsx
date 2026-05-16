@@ -28,7 +28,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
             {/* Primary Meta Tags */}
             <title>{title}</title>
             <meta name="description" content={description} />
-            {noindex ? <meta name="robots" content="noindex, nofollow" /> : <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />}
+            {noindex ? <meta name="robots" content="noindex, follow" /> : <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />}
             <link rel="canonical" href={canonicalUrl} />
 
             {/* Open Graph / Facebook */}
