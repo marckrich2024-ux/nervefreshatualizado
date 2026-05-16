@@ -215,7 +215,7 @@ const BlogPost = () => {
                                 Check Availability For {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })} <ExternalLink className="w-4 h-4 ml-2" />
                             </a>
                         </div>
-                        <p className="text-xs text-gray-500 mt-4">60-Day Money-Back Guarantee included.</p>
+                        <p className="text-xs text-gray-500 mt-4">180-Day Money-Back Guarantee included.</p>
                     </div>
 
                 </div>

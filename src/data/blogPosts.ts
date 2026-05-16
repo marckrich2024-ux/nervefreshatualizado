@@ -59,7 +59,7 @@ export const blogPosts: BlogPost[] = [
                         </tr>
                         <tr class="bg-white hover:bg-gray-50">
                             <td class="px-6 py-4 font-medium text-gray-900">Refund Policy</td>
-                            <td class="px-6 py-4">60 Days</td>
+                            <td class="px-6 py-4">180 Days</td>
                             <td class="px-6 py-4">90 Days</td>
                         </tr>
                     </tbody>
