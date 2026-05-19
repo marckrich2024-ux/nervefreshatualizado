@@ -52,23 +52,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
                 </script>
             )}
 
-            {/* FAQ Schema (fallback if no custom schema or compatible) */}
-            {!schema && faqs && faqs.length > 0 && (
-                <script type="application/ld+json">
-                    {JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "FAQPage",
-                        "mainEntity": faqs.map(faq => ({
-                            "@type": "Question",
-                            "name": faq.question,
-                            "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": faq.answer
-                            }
-                        }))
-                    })}
-                </script>
-            )}
+
         </Helmet>
     );
 };

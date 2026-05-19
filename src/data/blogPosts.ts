@@ -514,28 +514,7 @@ export const blogPosts: BlogPost[] = [
         author: 'Editorial Team',
         image: '/images/blog/scam-or-legit.webp',
         imageAlt: 'Illustrative editorial image of supplement trust checklist and safe ordering review',
-        schema: {
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-                {
-                    "@type": "Question",
-                    "name": "Is Nerve Fresh a classic payment scam?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "No. The company provides a real product and uses ClickBank, a secure, industry-standard checkout system."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "Is the 180-day refund policy real?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Yes, but you must purchase through the official website to ensure the refund policy is honored."
-                    }
-                }
-            ]
-        },
+
         content: `
             <p class="lead text-xl text-gray-700 mb-8">When searching for relief from nerve discomfort, it's easy to encounter exaggerated marketing. The question "Is Nerve Fresh a scam?" is one of the most common searches we see. We analyzed the business practices, product claims, and fulfillment process to give you a transparent answer.</p>
 
