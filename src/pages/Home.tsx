@@ -29,53 +29,7 @@ const Home = () => {
     const unifiedSchema = {
         "@context": "https://schema.org",
         "@graph": [
-            {
-                "@type": "Product",
-                "name": "Nerve Fresh",
-                "image": "https://www.the-health-journal.com/product.jpg",
-                "description": "Nerve Fresh is a natural dietary supplement designed to support healthy nerve function and relieve neuropathy symptoms.",
-                "brand": {
-                    "@type": "Brand",
-                    "name": "Nerve Fresh"
-                },
-                "offers": {
-                    "@type": "Offer",
-                    "url": "https://secure.nervefresh.com/index-is?&shield=4738aggfr4rkiymitn38phqims",
-                    "priceCurrency": "USD",
-                    "price": "49.00",
-                    "priceValidUntil": "2026-12-31",
-                    "availability": "https://schema.org/InStock",
-                    "hasMerchantReturnPolicy": {
-                        "@type": "MerchantReturnPolicy",
-                        "applicableCountry": "US",
-                        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnPeriod",
-                        "merchantReturnDays": 180,
-                        "returnFees": "https://schema.org/FreeReturn"
-                    },
-                    "shippingDetails": {
-                        "@type": "OfferShippingDetails",
-                        "shippingDestination": {
-                            "@type": "DefinedRegion",
-                            "addressCountry": "US"
-                        },
-                        "deliveryTime": {
-                            "@type": "ShippingDeliveryTime",
-                            "handlingTime": {
-                                "@type": "QuantitativeValue",
-                                "minValue": 0,
-                                "maxValue": 1,
-                                "unitCode": "DAY"
-                            },
-                            "transitTime": {
-                                "@type": "QuantitativeValue",
-                                "minValue": 5,
-                                "maxValue": 8,
-                                "unitCode": "DAY"
-                            }
-                        }
-                    }
-                }
-            },
+
             {
                 "@type": "FAQPage",
                 "mainEntity": [
