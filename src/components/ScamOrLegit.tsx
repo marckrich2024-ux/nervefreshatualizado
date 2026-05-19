@@ -22,7 +22,7 @@ const ScamOrLegit = () => {
                         Based on our editorial review, <strong>we found no evidence of a classic financial scam.</strong> The company provides a real product, uses a secure checkout process, and honors their 180-day refund policy. However, as with many supplements, some of the strongest marketing claims outpace the publicly available clinical evidence for the finished formula.
                     </p>
                     <p>
-                        If you decide to try Nerve Fresh, we strongly advise purchasing <strong>only through the official website</strong> to ensure you are covered by the money-back guarantee and to avoid counterfeit products sold on third-party marketplaces.
+                        If you decide to try Nerve Fresh, we strongly advise purchasing <strong>only through the official website</strong> to ensure you are covered by the money-back guarantee. For a deeper breakdown of trust signals, read our complete guide: <a href="/blog/is-nerve-fresh-a-scam-or-legit" className="text-brand-green font-bold hover:underline">Is Nerve Fresh a scam or legit?</a>
                     </p>
                 </div>
 

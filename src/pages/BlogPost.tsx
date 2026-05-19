@@ -23,7 +23,7 @@ const BlogPost = () => {
     // Parse Content for TOC and IDs
     const { modifiedContent, toc } = useMemo(() => {
         if (!post) return { modifiedContent: '', toc: [] };
-        const tocItems: { id: string; title: string }[] = [];
+        const tocItems: { id: string; title: string; schema?: any }[] = [];
         // Regex to find H2 tags and inject IDs
         const contentWithIds = post.content.replace(/<h2(.*?)>(.*?)<\/h2>/g, (match, attrs, title) => {
             // Strip HTML tags from title for the ID
@@ -42,9 +42,22 @@ const BlogPost = () => {
     const OFFER_URL = "https://secure.nervefresh.com/index-is?&shield=4738aggfr4rkiymitn38phqims";
 
     // Related Articles Logic
-    const relatedPosts = blogPosts
-        .filter(p => p.id !== post.id)
-        .slice(0, 3);
+    const relatedLinksMap: Record<string, string[]> = {
+        'nerve-fresh-ingredients-overview': ['is-nerve-fresh-a-scam-or-legit', 'nerve-fresh-side-effects', 'nerve-support-supplements'],
+        'is-nerve-fresh-a-scam-or-legit': ['nerve-fresh-customer-reviews-2026', 'nerve-fresh-ingredients-overview', 'nerve-fresh-side-effects'],
+        'nerve-fresh-side-effects': ['nerve-fresh-ingredients-overview', 'is-nerve-fresh-a-scam-or-legit'],
+        'nerve-fresh-customer-reviews-2026': ['is-nerve-fresh-a-scam-or-legit', 'nerve-fresh-side-effects'],
+        'nerve-support-supplements': ['nerve-fresh-ingredients-overview', 'nerve-fresh-side-effects']
+    };
+
+    const targetSlugs = post.slug && relatedLinksMap[post.slug] ? relatedLinksMap[post.slug] : [];
+    
+    let relatedPosts = blogPosts.filter(p => targetSlugs.includes(p.slug));
+    
+    if (relatedPosts.length < 3) {
+        const extraPosts = blogPosts.filter(p => p.id !== post.id && !targetSlugs.includes(p.slug));
+        relatedPosts = [...relatedPosts, ...extraPosts].slice(0, 3);
+    }
 
     // Schema Generator
     const articleSchema = {
@@ -107,6 +120,11 @@ const BlogPost = () => {
                 <script type="application/ld+json">
                     {JSON.stringify(breadcrumbSchema)}
                 </script>
+                {post.schema && (
+                    <script type="application/ld+json">
+                        {JSON.stringify(post.schema)}
+                    </script>
+                )}
             </Helmet>
 
             {/* Breadcrumb Nav */}
@@ -201,21 +219,26 @@ const BlogPost = () => {
                     {/* CTA Injection */}
                     <div className="mt-12 p-8 bg-green-50 rounded-2xl border border-green-100 text-center">
                         <h3 className="font-heading text-2xl font-bold text-gray-900 mb-4">
-                            Ready to Try Nerve Fresh?
+                            If You Decide to Evaluate Nerve Fresh Further
                         </h3>
-                        <p className="text-gray-700 mb-8 max-w-lg mx-auto">
-                            Join over 14,000 Americans who have found relief with this 100% natural, scientifically backed formula.
+                        <p className="text-gray-700 mb-8 max-w-2xl mx-auto">
+                            Check the current official ordering page, refund terms, and label details before buying. Our editorial review is independent, and we recommend discussing supplements with your healthcare professional if you use prescription medication or have a medical condition.
                         </p>
                         <div className="flex flex-col md:flex-row items-center justify-center gap-4">
                             <a
                                 href={OFFER_URL}
                                 target="_blank" rel="sponsored nofollow noopener noreferrer"
+                                onClick={() => {
+                                    if (window.dataLayer) {
+                                        window.dataLayer.push({ event: 'affiliate_click', cta_type: 'blog_footer_cta' });
+                                    }
+                                }}
                                 className="bg-brand-green text-white font-bold py-4 px-8 rounded-lg hover:bg-brand-darkGreen transition-colors shadow-lg w-full md:w-auto flex items-center justify-center"
                             >
-                                Check Availability For {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })} <ExternalLink className="w-4 h-4 ml-2" />
+                                See Current Price, Refund Policy & Official Ordering Details <ExternalLink className="w-4 h-4 ml-2" />
                             </a>
                         </div>
-                        <p className="text-xs text-gray-500 mt-4">180-Day Money-Back Guarantee included.</p>
+                        <p className="text-xs text-gray-500 mt-4 max-w-lg mx-auto">Affiliate disclosure: If you buy through this page, we may earn a commission at no extra cost to you. This does not change our editorial criteria.</p>
                     </div>
 
                 </div>
@@ -229,7 +252,7 @@ const BlogPost = () => {
                         {relatedPosts.map((relatedPost) => (
                             <Link to={`/blog/${relatedPost.slug}`} key={relatedPost.id} className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden group block">
                                 <div className="h-48 bg-gray-200 relative overflow-hidden">
-                                    <img src={relatedPost.image} alt={relatedPost.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                    <img src={relatedPost.image} alt={relatedPost.imageAlt || relatedPost.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                                 </div>
                                 <div className="p-6">
                                     <p className="text-xs text-brand-green font-bold mb-2 uppercase tracking-wide">Analysis</p>

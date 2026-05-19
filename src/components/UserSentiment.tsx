@@ -15,7 +15,7 @@ const UserSentiment = () => {
         {
             name: "Common Negative Sentiment",
             role: "Focus: Lack of Results",
-            text: "A noticeable portion of users report taking the supplement as directed for 30 to 60 days with absolutely zero change in symptoms. The positive aspect highlighted in these negative discussions is that the 180-day refund policy is generally honored.",
+            text: "A noticeable portion of users report taking the supplement as directed for 30 to 60 days with absolutely zero change in symptoms. In these discussions, users often note that a 180-day refund policy is advertised, though individual refund experiences vary.",
             source: "Aggregated from Public Forums",
             icon: <MessageCircle className="w-4 h-4 text-orange-600" />,
             borderColor: "border-orange-200",
@@ -61,10 +61,9 @@ const UserSentiment = () => {
                     ))}
                 </div>
 
-                {/* Honesty Footer */}
                 <div className="text-center mt-6">
                     <p className="font-sans text-[14px] text-slate-500 bg-white inline-block px-6 py-3 rounded-lg border border-slate-200 shadow-sm">
-                        While individual results vary, aggregate public sentiment indicates some users report symptomatic relief after several weeks of use, though a clear portion of users utilize the refund policy.
+                        While individual results vary, aggregate public sentiment indicates some users report symptomatic relief after several weeks of use, though a clear portion of users utilize the refund policy. You can read our deep dive on <a href="/blog/nerve-fresh-customer-reviews-2026" className="text-brand-green font-bold hover:underline">what public feedback suggests</a>.
                     </p>
                 </div>
             </div>

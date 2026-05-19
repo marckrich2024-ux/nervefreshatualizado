@@ -89,7 +89,7 @@ const ExitModal = () => {
 
                 <div className="bg-slate-50 p-3 text-center border-t border-slate-100">
                     <p className="text-[10px] text-slate-400">
-                        Limited time offer. Availability not guaranteed.
+                        Limited time offer. Availability subject to change.
                     </p>
                 </div>
             </div>

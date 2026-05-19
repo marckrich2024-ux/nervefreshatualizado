@@ -6,7 +6,7 @@ const FAQSection = () => {
     const faqs = [
         {
             question: "Is Nerve Fresh a scam?",
-            answer: "No, we found no evidence of a financial scam. The product is shipped as promised, the checkout is secure, and the 180-day refund policy is generally honored. However, like many supplements, its marketing claims may be stronger than the publicly available clinical evidence."
+            answer: "No, we found no evidence of a financial scam. The official ordering page presents a purchasable product, the checkout is secure, and a 180-day refund policy is advertised. However, like many supplements, its marketing claims may be stronger than the publicly available clinical evidence."
         },
         {
             question: "Does Nerve Fresh really work?",

@@ -58,6 +58,7 @@ const Header = () => {
                     <nav className="hidden md:flex items-center space-x-8">
                         <a href="/#benefits" onClick={() => handleLinkClick('benefits')} className="font-medium text-gray-600 hover:text-brand-green uppercase text-sm tracking-wide">Benefits</a>
                         <a href="/#our-process" onClick={() => handleLinkClick('our-process')} className="font-medium text-gray-600 hover:text-brand-green uppercase text-sm tracking-wide">Our Process</a>
+                        <Link to="/blog" className="font-medium text-gray-600 hover:text-brand-green uppercase text-sm tracking-wide">Research Guides</Link>
                         <a href="/#faq" onClick={() => handleLinkClick('faq')} className="font-medium text-gray-600 hover:text-brand-green uppercase text-sm tracking-wide">FAQ</a>
                     </nav>
 
@@ -89,6 +90,7 @@ const Header = () => {
                     <div className="md:hidden bg-white border-b border-gray-200 absolute w-full left-0 top-16 shadow-xl py-4 flex flex-col items-center space-y-4 animate-in slide-in-from-top-2">
                         <a href="/#benefits" onClick={() => handleLinkClick('benefits')} className="font-medium text-gray-800 py-2">Benefits</a>
                         <a href="/#our-process" onClick={() => handleLinkClick('our-process')} className="font-medium text-gray-800 py-2">Our Process</a>
+                        <Link to="/blog" onClick={() => setIsOpen(false)} className="font-medium text-gray-800 py-2">Research Guides</Link>
                         <a href="/#faq" onClick={() => handleLinkClick('faq')} className="font-medium text-gray-800 py-2">FAQ</a>
                         <a
                             href={OFFER_URL}

@@ -76,9 +76,9 @@ const CostComparison = () => {
                 </div>
 
                 {/* Insight Box */}
-                <div className="bg-white border border-slate-200 rounded-lg p-6">
+                <div className="bg-white border border-slate-200 rounded-lg p-6 mt-4">
                     <p className="font-sans text-[17px] text-text-muted leading-relaxed">
-                        At $69/bottle, Nerve Fresh is on the higher end for OTC nerve supplements. However, at $2.30 per day, it costs less than a cup of coffee — a small price to pay compared to the cost of sleepless nights. Plus, the 180-day guarantee significantly reduces financial risk compared to alternatives. If you opt for the 6-bottle package, the per-month cost drops to approximately $39, which is more competitive.
+                        At $69/bottle, Nerve Fresh is on the higher end for OTC nerve supplements. However, at $2.30 per day, it costs less than a cup of coffee — a small price to pay compared to the cost of sleepless nights. Plus, the 180-day guarantee significantly reduces financial risk compared to alternatives. If you opt for the 6-bottle package, the per-month cost drops to approximately $39, which is more competitive. To <a href="/blog/nerve-support-supplements" className="text-brand-green font-bold hover:underline">compare nerve support supplements</a> more broadly, read our full guide.
                     </p>
                 </div>
             </div>

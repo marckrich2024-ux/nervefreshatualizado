@@ -19,7 +19,7 @@ const DeepDive = () => {
 
                     <div className="prose prose-lg prose-slate text-text-main leading-relaxed">
                         <p>
-                            To answer whether Nerve Fresh works, we looked past the marketing claims and analyzed the available peer-reviewed literature on its key ingredients. 
+                            To answer whether Nerve Fresh works, we looked past the marketing claims and analyzed the available peer-reviewed literature on its key ingredients. You can read our <a href="/blog/nerve-fresh-ingredients-overview" className="text-brand-green font-bold hover:underline">detailed ingredients overview</a> for a complete breakdown of what the data suggests.
                         </p>
                         <p>
                             The short answer is yes, but not in the way you might expect. Most neuropathy supplements rely on "Mega-Dosing" B-Vitamins (B1, B6, B12). While B-Vitamin deficiency <em>is</em> a cause of neuropathy, it accounts for less than 15% of cases in modern adults. The vast majority of cases are metabolic or inflammatory.
@@ -57,7 +57,7 @@ const DeepDive = () => {
 
                     <div className="prose prose-lg prose-slate text-text-main leading-relaxed">
                         <p>
-                            Every substance that has an effect can have a side effect. Our toxicology report on Nerve Fresh highlights safety, but there are specific nuances every consumer must know before buying.
+                            Every substance that has an effect can have a side effect. Our toxicology report on Nerve Fresh highlights safety, but there are specific nuances every consumer must know before buying. Be sure to read our full guide on <a href="/blog/nerve-fresh-side-effects" className="text-brand-green font-bold hover:underline">potential side effects and safety notes</a>.
                         </p>
 
                         <h3 className="text-xl font-bold mt-6 mb-3 text-brand-darkGreen">1. The "Sedation" Factor (Drowsiness)</h3>

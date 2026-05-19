@@ -15,6 +15,7 @@ import MethodologySection from '../components/MethodologySection';
 import DeepDive from '../components/DeepDive';
 import EvidenceTable from '../components/EvidenceTable';
 import UserSentiment from '../components/UserSentiment';
+import EditorialGuides from '../components/EditorialGuides';
 import ProsCons from '../components/ProsCons';
 import CostComparison from '../components/CostComparison';
 import FAQSection from '../components/FAQSection';
@@ -83,7 +84,7 @@ const Home = () => {
                         "name": "Is Nerve Fresh a scam?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "No, we found no evidence of a financial scam. The product is shipped as promised, the checkout is secure, and the 180-day refund policy is generally honored."
+                            "text": "No, we found no evidence of a financial scam. The official ordering page presents a purchasable product, the checkout is secure, and a 180-day refund policy is advertised."
                         }
                     },
                     {
@@ -147,6 +148,7 @@ const Home = () => {
             <QuickVerdict />
             <ScamOrLegit />
             <UserSentiment />
+            <EditorialGuides />
             <MethodologySection />
             <MechanismSection />
             <DeepDive />
